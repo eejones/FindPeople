@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130420213006) do
+ActiveRecord::Schema.define(:version => 20130420221311) do
 
   create_table "members", :force => true do |t|
     t.string   "username"
@@ -41,6 +41,22 @@ ActiveRecord::Schema.define(:version => 20130420213006) do
     t.boolean  "admin",           :default => false
   end
 
+  add_index "members", ["act"], :name => "index_members_on_act"
+  add_index "members", ["camera"], :name => "index_members_on_camera"
+  add_index "members", ["direct"], :name => "index_members_on_direct"
+  add_index "members", ["email"], :name => "index_members_on_email", :unique => true
+  add_index "members", ["extra"], :name => "index_members_on_extra"
+  add_index "members", ["marketing"], :name => "index_members_on_marketing"
+  add_index "members", ["other"], :name => "index_members_on_other"
+  add_index "members", ["pa"], :name => "index_members_on_pa"
+  add_index "members", ["paid"], :name => "index_members_on_paid"
+  add_index "members", ["produce"], :name => "index_members_on_produce"
   add_index "members", ["remember_token"], :name => "index_members_on_remember_token"
+  add_index "members", ["setdesign"], :name => "index_members_on_setdesign"
+  add_index "members", ["sound"], :name => "index_members_on_sound"
+  add_index "members", ["stunt"], :name => "index_members_on_stunt"
+  add_index "members", ["username"], :name => "index_members_on_username", :unique => true
+  add_index "members", ["wardrobe"], :name => "index_members_on_wardrobe"
+  add_index "members", ["write"], :name => "index_members_on_write"
 
 end
