@@ -1,20 +1,22 @@
 %header{:class=>"navbar navbar-fixed-top navbar-inverse"}
   %div.navbar-inner
     %div.container
-      = link_to(@current_employee.name, current_employee, {:id=> "logo"})
-      = link_to("Employee Log", root_path, {:id=> "logo"})
+      = link_to("Member Information", root_path, {:id=> "logo"})
       %nav
         %ul{:class=>"nav pull-right"}
           %li= link_to "Home", root_path
           %li= link_to "Help", help_path
-          %li{:id=>"fat-menu", :class=>"dropdown"}
-            %a{:href=>"#", :class=>"dropdown-toggle", "data-toggle"=>"dropdown"}
-              %strong
-                Employee
-              %b{:class=>"caret"}  
-            %ul{:class=>"dropdown-menu"}
-              %li= link_to "Log Time", current_employee
-              %li= link_to "Settings", edit_employee_path(current_employee)
-              %li{:class=>"divider"}
-              %li= link_to "Sign out", signout_path, :method=> "delete"
+          - if signed_in?
+            %li= link_to "Users", '#'
+            %li{:id=>"fat-menu" :class=>"dropdown"}
+              %a{:href=>"#" :class=>"dropdown-toggle" "data-toggle"=>"dropdown"}
+                %strong
+                  Member
+                %b{:class=>"caret"}
+              %ul{:class=>"dropdown-menu"}
+                %li= link_to "Profile", current_user
+                %li= link_to "Settings", '#'
+                %li{:class=>"divider"}
+                %li= link_to "Sign out", signout_path, :method=> "delete"
+          - else
             %li= link_to "Sign in", signin_path

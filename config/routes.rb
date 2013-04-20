@@ -1,5 +1,6 @@
 FindPeople::Application.routes.draw do
   resources :members
+  resources :sessions, only: [:new, :create, :destroy]
 
   match '/signup',  :to=> 'members#new'
   match '/signin',  :to=> 'sessions#new'

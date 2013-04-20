@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130420030019) do
+ActiveRecord::Schema.define(:version => 20130420213006) do
 
   create_table "members", :force => true do |t|
     t.string   "username"
@@ -34,8 +34,13 @@ ActiveRecord::Schema.define(:version => 20130420030019) do
     t.boolean  "paid"
     t.integer  "salary"
     t.string   "credits"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+    t.string   "remember_token"
+    t.string   "email"
+    t.boolean  "admin",           :default => false
   end
+
+  add_index "members", ["remember_token"], :name => "index_members_on_remember_token"
 
 end

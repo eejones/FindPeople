@@ -2,10 +2,13 @@
 %h1 Sign Up Form
 %div.row
   %div.span6.offset3
+    = render 'shared/error_messages'
     %div.awesome
       = form_for (@member) do |m|
         = m.label :username
         = m.text_field :username
+        = m.label "Email"
+        = m.text_field :email
         = m.label "Password"
         = m.password_field :password
         = m.label "Password Confirmation"
@@ -46,5 +49,7 @@
         = m.number_field :salary
         = m.label "Selected Credits"
         = m.text_area :credits
+        = m.label "Admin"
+        = m.check_box :admin
         = m.submit "Create User Record", :class=> "btn btn-large btn-primary"
 = link_to 'Back', members_path

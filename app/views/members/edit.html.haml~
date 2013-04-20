@@ -1,7 +1,8 @@
-- provide(:title, 'Sign up')
-%h1 Sign Up Form
+- provide(:title, 'Edit Member')
+%h1 Editing member
 %div.row
   %div.span6.offset3
+    = render 'shared/error_messages'
     %div.awesome
       = form_for (@member) do |m|
         = m.label :username
@@ -50,5 +51,6 @@
         = m.text_area :credits
         = m.label "Admin"
         = m.check_box :admin
-        = m.submit "Create User Record", :class=> "btn btn-large btn-primary"
+
+= link_to 'Show', @member |
 = link_to 'Back', members_path

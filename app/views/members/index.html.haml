@@ -1,0 +1,58 @@
+- provide(:title, "All Members")
+%h1 Listing members
+
+= will_paginate
+
+%table
+  %tr
+    %th Username
+    %th Password
+    %th Password digest
+    %th Act
+    %th Produce
+    %th Direct
+    %th Camera
+    %th Extra
+    %th PA
+    %th Write
+    %th Sound
+    %th Wardrobe
+    %th Setdesign
+    %th Stunt
+    %th Marketing
+    %th Other
+    %th What
+    %th Paid
+    %th Salary
+    %th Credits
+    %th 
+    %th 
+    %th 
+
+  - @members.each do |member|
+    %tr
+      %td= member.username
+      %td= member.password
+      %td= member.password_digest
+      %td= member.act
+      %td= member.produce
+      %td= member.direct
+      %td= member.camera
+      %td= member.extra
+      %td= member.pa
+      %td= member.write
+      %td= member.sound
+      %td= member.wardrobe
+      %td= member.setdesign
+      %td= member.stunt
+      %td= member.marketing
+      %td= member.other
+      %td= member.what
+      %td= member.paid
+      %td= member.salary
+      %td= member.credits
+      %td= link_to 'Show', member
+      %td= link_to 'Edit', edit_member_path(member)
+      %td= link_to 'Destroy', member, :method=> :delete, :data=> { :confirm=> 'Are you sure?' }
+
+= link_to 'New Member', new_member_path
