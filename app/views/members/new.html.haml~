@@ -1,6 +1,7 @@
+- provide(:title, 'Sign up')
+%h1 Sign Up Form
 %div.row
   %div.span6.offset3
-    %h1 Sign Up Form
     = form_for (@member) do |m|
       = m.label :username
       = m.text_field :username
@@ -8,8 +9,8 @@
       = m.password_field :password
       = m.label "Password Confirmation"
       = m.password_field :password_digest
-      .awesome
-        Interests
+      %div.highlights
+        %h1 Interests
       = m.label "Actor"
       = m.check_box :act
       = m.label "Producer"
@@ -45,4 +46,4 @@
       = m.label "Selected Credits"
       = m.text_area :credits
       = m.submit "Create User Record", :class=> "btn btn-large btn-primary"
-<%= link_to 'Back', members_path %>
+= link_to 'Back', members_path
