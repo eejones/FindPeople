@@ -1,0 +1,45 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  username: MyString
+  password: MyString
+  password_digest: MyString
+  act: false
+  produce: false
+  direct: false
+  camera: false
+  extra: false
+  pa: false
+  write: false
+  sound: false
+  wardrobe: false
+  setdesign: false
+  stunt: false
+  marketing: false
+  other: false
+  what: MyString
+  paid: false
+  salary: 1
+  credits: MyString
+
+two:
+  username: MyString
+  password: MyString
+  password_digest: MyString
+  act: false
+  produce: false
+  direct: false
+  camera: false
+  extra: false
+  pa: false
+  write: false
+  sound: false
+  wardrobe: false
+  setdesign: false
+  stunt: false
+  marketing: false
+  other: false
+  what: MyString
+  paid: false
+  salary: 1
+  credits: MyString

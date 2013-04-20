@@ -1,0 +1,9 @@
+%div{:class=>"center hero-unit"}
+  %h1 Independent Film Sign Up(working name)
+  %h2
+    'Make it in
+    .small
+      independent
+    movies...'
+= link_to signup_path "Sign Up"
+= link_to signin_path "Sign In"
