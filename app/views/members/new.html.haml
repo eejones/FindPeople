@@ -1,0 +1,48 @@
+%div.row
+  %div.span6.offset3
+    %h1 Sign Up Form
+    = form_for (@member) do |m|
+      = m.label :username
+      = m.text_field :username
+      = m.label "Password"
+      = m.password_field :password
+      = m.label "Password Confirmation"
+      = m.password_field :password_digest
+      .awesome
+        Interests
+      = m.label "Actor"
+      = m.check_box :act
+      = m.label "Producer"
+      = m.check_box :produce
+      = m.label "Director"
+      = m.check_box :direct
+      = m.label "Extra"
+      = m.check_box :extra
+      = m.label "Cameraman"
+      = m.check_box :camera
+      = m.label "Writer"
+      = m.check_box :write
+      = m.label "PA"
+      = m.check_box :pa
+      = m.label "Sound guy"
+      = m.check_box :sound
+      = m.label "Wardrobe"
+      = m.check_box :wardrobe
+      = m.label "Set Design"
+      = m.check_box :setdesign
+      = m.label "Stuntman"
+      = m.check_box :stunt
+      = m.label "Marketing"
+      = m.check_box :marketing
+      = m.label "Other"
+      = m.check_box :other
+      = m.label "Explain"
+      = m.text_field :what
+      = m.label "Only include paid jobs?"
+      = m.check_box :paid
+      = m.label "Salary"
+      = m.number_field :salary
+      = m.label "Selected Credits"
+      = m.text_area :credits
+      = m.submit "Create User Record", :class=> "btn btn-large btn-primary"
+= link_to 'Back', members_path

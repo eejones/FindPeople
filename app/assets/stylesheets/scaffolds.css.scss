@@ -1,3 +1,19 @@
+/* mixins, variables, etc. */
+
+$grayMediumLight: #eaeaea;
+$graydark: #999999;
+$white: #FFFFFF;
+$reddish: #CC0000;
+$black: #000000;
+$graylight: #EEEEEE;
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
+}
+
+
 body {
   background-color: #fff;
   color: #333;
@@ -67,6 +83,19 @@ div {
     list-style: square;
   }
 }
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 50px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
 
 awesome{
   h1{
