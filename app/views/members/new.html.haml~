@@ -2,6 +2,7 @@
 %h1 Sign Up Form
 %div.row
   %div.span6.offset3
+    = render 'shared/error_messages'
     %div.awesome
       = form_for (@member) do |m|
         = m.label :username

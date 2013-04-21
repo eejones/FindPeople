@@ -48,11 +48,13 @@ class MembersController < ApplicationController
     @member = Member.new(params[:member])
     respond_to do |format|
       if @member.save
-        format.html { redirect_to @member, notice: 'Member was successfully created.' }
-        format.json { render json: @member, status: :created, location: @member }
+        sign_in @employee
+        flash[:success] = "Welcome!"
+        format.html { redirect_to @member, :notice=> 'Member was successfully created.' }
+        format.json { render :json=> @member, :status=> :created, :location=> @member }
       else
-        format.html { render action: "new" }
-        format.json { render json: @member.errors, status: :unprocessable_entity }
+        format.html { render :action=> "new" }
+        format.json { render :json=> @member.errors, :status=> :unprocessable_entity }
       end
     end
   end
@@ -64,11 +66,12 @@ class MembersController < ApplicationController
 
     respond_to do |format|
       if @member.update_attributes(params[:member])
-        format.html { redirect_to @member, notice: 'Member was successfully updated.' }
+        sign_in @user
+        format.html { redirect_to @member, :notice=> 'Member was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
-        format.json { render json: @member.errors, status: :unprocessable_entity }
+        format.html { render :action=> "edit" }
+        format.json { render :json=> @member.errors, :status=> :unprocessable_entity }
       end
     end
   end

@@ -1,0 +1,75 @@
+- provide(:title, @member.username)
+%div{:class=>"row"}
+  %aside.span4
+    %section
+      %h1= @member.username
+%p{:id=>"notice"}
+  = notice
+%table.erictable
+  %tr
+    %th Username:
+    %th Email:
+  %COLGROUP
+    %COL{:width=>"80"}
+    %COL{:width=>"80"}
+  %tr
+    %td= @member.username
+    %td= @member.email
+%table.erictable
+  %tr
+    %th Act:
+    %th Produce:
+    %th Direct:
+    %th Camera:
+    %th Extra:
+    %th Pa:
+    %th Write:
+    %th Sound:
+    %th Wardrobe:
+    %th Setdesign:
+    %th Stunt:
+    %th Marketing:
+    %th Other:
+    %th What:
+    %th Paid:
+    %th Salary:
+    %th Credits:
+  %COLGROUP
+    %COL{:width=>"60"}
+    %COL{:width=>"60"}
+    %COL{:width=>"60"}
+    %COL{:width=>"60"}
+    %COL{:width=>"60"}
+    %COL{:width=>"60"}
+    %COL{:width=>"60"}
+    %COL{:width=>"60"}
+    %COL{:width=>"60"}
+    %COL{:width=>"60"}
+    %COL{:width=>"60"}
+    %COL{:width=>"60"}
+    %COL{:width=>"60"}
+    %COL{:width=>"60"}
+    %COL{:width=>"60"}
+    %COL{:width=>"60"}
+    %COL{:width=>"60"}
+  %tr
+    %td= @member.act
+    %td= @member.produce
+    %td= @member.direct
+    %td= @member.camera
+    %td= @member.extra
+    %td= @member.pa
+    %td= @member.write
+    %td= @member.sound
+    %td= @member.wardrobe
+    %td= @member.setdesign
+    %td= @member.stunt
+    %td= @member.marketing
+    %td= @member.other
+    %td= @member.what
+    %td= @member.paid
+    %td= @member.salary
+    %td= @member.credits
+
+= link_to 'Edit', edit_member_path(@member)
+= link_to 'Back', members_path

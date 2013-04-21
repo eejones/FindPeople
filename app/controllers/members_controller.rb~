@@ -2,7 +2,10 @@ class MembersController < ApplicationController
   # GET /members
   # GET /members.json
 
-  before_filter :signed_in_member, only: [:index, :edit, :update]
+  before_filter :signed_in_member, :only=> [:index, :edit, :update]
+  before_filter :correct_user, :only=> [:edit, :update]
+  before_filter :admin_user, :only=> :destroy
+
   def index
     @members = Member.paginate(:page=> params[:page])
 
@@ -45,11 +48,11 @@ class MembersController < ApplicationController
     @member = Member.new(params[:member])
     respond_to do |format|
       if @member.save
-        format.html { redirect_to @member, notice: 'Member was successfully created.' }
-        format.json { render json: @member, status: :created, location: @member }
+        format.html { redirect_to @member, :notice=> 'Member was successfully created.' }
+        format.json { render :json=> @member, :status=> :created, :location=> @member }
       else
-        format.html { render action: "new" }
-        format.json { render json: @member.errors, status: :unprocessable_entity }
+        format.html { render :action=> "new" }
+        format.json { render :json=> @member.errors, :status=> :unprocessable_entity }
       end
     end
   end
@@ -61,11 +64,12 @@ class MembersController < ApplicationController
 
     respond_to do |format|
       if @member.update_attributes(params[:member])
-        format.html { redirect_to @member, notice: 'Member was successfully updated.' }
+        sign_in @user
+        format.html { redirect_to @member, :notice=> 'Member was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
-        format.json { render json: @member.errors, status: :unprocessable_entity }
+        format.html { render :action=> "edit" }
+        format.json { render :json=> @member.errors, :status=> :unprocessable_entity }
       end
     end
   end
