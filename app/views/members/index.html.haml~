@@ -1,7 +1,16 @@
 - provide(:title, "All Members")
+
 %h1 Listing members
 
-= will_paginate
+= form_tag('', :method => :get) do
+  %label{:for => "show"} Show:
+  %br/
+  %select#show{:name => "show", :onchange => "window.location='\#{url_for(eval('#{'member'}_url({ :query => params[:query] })'))}' + '?show=' + this.value"}
+    - @filters.each do |pair|
+      %option{:selected => "selected", :value => pair[:scope]}
+        = pair[:label]
+  = submit_tag 'Filter'
+
 
 %table
   %tr
@@ -21,7 +30,6 @@
     %th Other
     %th Paid
     %th Salary
-    %th 
     %th 
     %th 
 
@@ -44,7 +52,6 @@
       %td= member.paid
       %td= member.salary
       %td= link_to 'Show', member
-      %td= link_to 'Edit', edit_member_path(member)
       %td= link_to 'Destroy', member, :method=> :delete, :data=> { :confirm=> 'Are you sure?' }
 
 = link_to 'New Member', new_member_path

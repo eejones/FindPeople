@@ -1,5 +1,15 @@
 - provide(:title, "All Members")
+
 %h1 Listing members
+
+= form_tag('', :method => :get) do
+  %label{:for => "show"} Show:
+  %br/
+  %select#show{:name => "show", :onchange => "window.location='\#{url_for(eval('#{'member'}_url({ :query => params[:query] })'))}' + '?show=' + this.value"}
+    - @filters.each do |pair|
+      %option{:selected => "selected", :value => pair[:scope]}
+        = pair[:label]
+  = submit_tag 'Filter'
 
 = will_paginate
 

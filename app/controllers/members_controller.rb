@@ -4,15 +4,25 @@ class MembersController < ApplicationController
 
   before_filter :signed_in_member, :only=> [:index, :edit, :update]
   before_filter :correct_user, :only=> [:edit, :update]
-  before_filter :admin_user, :only=> :destroy
+  before_filter :admin_member, :only=> :destroy
 
   def index
-    @members = Member.paginate(:page=> params[:page])
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @members }
-    end
+    @filters = Member::FILTERS
+    if params[:show] && @filters.collect{|f| f[:scope]}.include?(params[:show])
+      @members = Member.send(params[:show]).paginate(:page=> params[:page])
+    else
+      @members = Member.paginate(:page=> params[:page])
+      respond_to do |format|
+        format.html # index.html.erb
+        format.json { render json: @members }
+      end
+    end  
+#    @members = Member.actors.paginate(:page=> params[:page])
+#    @members = @members.paginate(:page=> params[:page])
+#    respond_to do |format|
+#      format.html # index.html.erb
+#      format.json { render json: @members }
+#    end
   end
 
   # GET /members/1
@@ -81,7 +91,6 @@ class MembersController < ApplicationController
   def destroy
     @member = Member.find(params[:id])
     @member.destroy
-
     respond_to do |format|
       format.html { redirect_to members_url }
       format.json { head :no_content }

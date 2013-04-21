@@ -4,13 +4,37 @@ class Member < ActiveRecord::Base
 
   before_save { |member| member.email = email.downcase }
   before_save :create_remember_token
-  validates :username, presence: true, length: { maximum: 20 }
+  validates :username, presence: true, length: { maximum: 100 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence:   true,
                     format:     { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
   validates :password, :presence=> true, :length=> { :minimum=> 6 }
   validates :password_confirmation, :presence=> true
+
+  scope :actors,      :conditions => { :act => true }
+  scope :producers,    :conditions => { :produce => true }
+  scope :directors,     :conditions => { :direct => true }
+  scope :extras,   :conditions => { :extra => true }
+  scope :pas,  :conditions => { :pa => true }
+  scope :writers,   :conditions => { :write => true }
+
+FILTERS = [
+  {:scope => "all",         :label => "All"},
+  {:scope => "actors",      :label => "Actors"},
+  {:scope => "producers",    :label => "Producers"},
+  {:scope => "directors",     :label => "Directors"},
+  {:scope => "extras",   :label => "Extras"},
+  {:scope => "pas",  :label => "PAs"},
+  {:scope => "writers",   :label => "Writers"}
+  {:scope => "sound",   :label => "Sound Engineers"},
+  {:scope => "wardrobe",  :label => "Wardrobe"},
+  {:scope => "setdesign",   :label => "Set Design"}
+  {:scope => "stunt",   :label => "Stunt"},
+  {:scope => "marketing",  :label => "Marketing"},
+  {:scope => "paid",   :label => "Paid-only"}
+]
+
 
   private
 
