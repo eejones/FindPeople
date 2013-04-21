@@ -15,7 +15,8 @@ gem 'bootstrap-will_paginate', '0.0.6'
 gem 'haml'
 gem 'haml-rails'
 gem 'sqlite3'
-
+gem 'paperclip', '~> 2.7'
+gem 'cocaine', '0.4.0'
 gem 'json'
 
 # Gems used only for assets and not required

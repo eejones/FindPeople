@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130420221311) do
+ActiveRecord::Schema.define(:version => 20130421054059) do
 
   create_table "members", :force => true do |t|
     t.string   "username"
@@ -34,11 +34,15 @@ ActiveRecord::Schema.define(:version => 20130420221311) do
     t.boolean  "paid"
     t.integer  "salary"
     t.string   "credits"
-    t.datetime "created_at",                         :null => false
-    t.datetime "updated_at",                         :null => false
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
     t.string   "remember_token"
     t.string   "email"
-    t.boolean  "admin",           :default => false
+    t.boolean  "admin",               :default => false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "members", ["act"], :name => "index_members_on_act"

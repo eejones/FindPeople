@@ -3,7 +3,7 @@ class MembersController < ApplicationController
   # GET /members.json
 
   before_filter :signed_in_member, :only=> [:index, :edit, :update]
-  before_filter :correct_user, :only=> [:edit, :update]
+#  before_filter :correct_member, :only=> [:edit, :update]
   before_filter :admin_member, :only=> :destroy
 
   def index
@@ -40,7 +40,6 @@ class MembersController < ApplicationController
   # GET /members/new.json
   def new
     @member = Member.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @member }
@@ -76,7 +75,7 @@ class MembersController < ApplicationController
 
     respond_to do |format|
       if @member.update_attributes(params[:member])
-        sign_in @user
+        sign_in @member
         format.html { redirect_to @member, :notice=> 'Member was successfully updated.' }
         format.json { head :no_content }
       else

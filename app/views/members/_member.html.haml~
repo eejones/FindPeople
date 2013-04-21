@@ -1,0 +1,6 @@
+%li
+  = image_tag member.avatar.url(:thumb)
+  = link_to 'Edit', edit_member_path(member)
+  = link_to member.username, member
+  - if current_member.admin? && !current_member?(member)
+    | #{link_to "delete", member, method: :delete, data: { confirm: "You sure?" }}

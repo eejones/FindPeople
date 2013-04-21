@@ -13,46 +13,8 @@
 
 = will_paginate
 
-%table
-  %tr
-    %th Username
-    %th Act
-    %th Produce
-    %th Direct
-    %th Camera
-    %th Extra
-    %th PA
-    %th Write
-    %th Sound
-    %th Wardrobe
-    %th Setdesign
-    %th Stunt
-    %th Marketing
-    %th Other
-    %th Paid
-    %th Salary
-    %th 
-    %th 
-
-  - @members.each do |member|
-    %tr
-      %td= member.username
-      %td= member.act
-      %td= member.produce
-      %td= member.direct
-      %td= member.camera
-      %td= member.extra
-      %td= member.pa
-      %td= member.write
-      %td= member.sound
-      %td= member.wardrobe
-      %td= member.setdesign
-      %td= member.stunt
-      %td= member.marketing
-      %td= member.other
-      %td= member.paid
-      %td= member.salary
-      %td= link_to 'Show', member
-      %td= link_to 'Destroy', member, :method=> :delete, :data=> { :confirm=> 'Are you sure?' }
+%ul.members
+  = render @members
+= will_paginate
 
 = link_to 'New Member', new_member_path

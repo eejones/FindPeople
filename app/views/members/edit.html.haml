@@ -12,7 +12,9 @@
         = m.label "Password"
         = m.password_field :password
         = m.label "Password Confirmation"
-        = m.password_field :password_digest
+        = m.password_field :password_confirmation
+        = m.label "Avatar"
+        = m.file_field :avatar
         %div.highlights
           %h1 Interests
         = m.label "Actor"
@@ -51,6 +53,7 @@
         = m.text_area :credits
         = m.label "Admin"
         = m.check_box :admin
+        = m.submit "Save changes", :class=> "btn btn-large btn-primary"
 
 = link_to 'Show', @member |
 = link_to 'Back', members_path

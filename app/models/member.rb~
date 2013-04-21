@@ -18,6 +18,12 @@ class Member < ActiveRecord::Base
   scope :extras,   :conditions => { :extra => true }
   scope :pas,  :conditions => { :pa => true }
   scope :writers,   :conditions => { :write => true }
+  scope :sound,   :conditions => {:sound=>true}
+  scope :wardrobe,  :conditions => {:wardrobe=>true}
+  scope :setdesign,   :conditions => {:setdesign=>true}
+  scope :stunt,   :conditions => {:stunt=>true}
+  scope :marketing,  :conditions => {:marketing=>true}
+  scope :paid,   :conditions => {:paid=>true}
 
 FILTERS = [
   {:scope => "all",         :label => "All"},
@@ -26,10 +32,10 @@ FILTERS = [
   {:scope => "directors",     :label => "Directors"},
   {:scope => "extras",   :label => "Extras"},
   {:scope => "pas",  :label => "PAs"},
-  {:scope => "writers",   :label => "Writers"}
+  {:scope => "writers",   :label => "Writers"},
   {:scope => "sound",   :label => "Sound Engineers"},
   {:scope => "wardrobe",  :label => "Wardrobe"},
-  {:scope => "setdesign",   :label => "Set Design"}
+  {:scope => "setdesign",   :label => "Set Design"},
   {:scope => "stunt",   :label => "Stunt"},
   {:scope => "marketing",  :label => "Marketing"},
   {:scope => "paid",   :label => "Paid-only"}

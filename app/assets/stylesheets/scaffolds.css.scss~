@@ -128,12 +128,17 @@ input {
   }
 }
 
-.erictable
+.erictable{
   th{
     text-align: left;
     color: $black;
   }
-
+  td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  }
+}
 
 /* highlight area */
 .highlights{
