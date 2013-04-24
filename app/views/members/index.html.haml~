@@ -3,36 +3,16 @@
 %h1 Listing members
 
 = form_tag('', :method => :get) do
-  %label{:for => "show"} Show:
-  %br/
-  %select#show{:name => "show", :onchange => "window.location='\#{url_for(eval('#{'member'}_url({ :query => params[:query] })'))}' + '?show=' + this.value"}
-    - @filters.each do |pair|
-      %option{:selected => "selected", :value => pair[:scope]}
-        = pair[:label]
-  = submit_tag 'Filter'
+  %div.filtertime
+    %label{:for => "show"} Show:
+    %br/
+    %select#show{:name => "show", :onchange => "window.location='\#{url_for(eval('#{'member'}_url({ :query => params[:query] })'))}' + '?show=' + this.value", :selected=>'All'}
+      - @filters.each do |pair|
+        %option{:selected => pair[:scope], :value => pair[:scope]}
+          = pair[:label]
+    = submit_tag 'Filter'
 
 = will_paginate
-
-%table
-  %tr
-    %th Username
-    %th Act
-    %th Produce
-    %th Direct
-    %th Camera
-    %th Extra
-    %th PA
-    %th Write
-    %th Sound
-    %th Wardrobe
-    %th Setdesign
-    %th Stunt
-    %th Marketing
-    %th Other
-    %th Paid
-    %th Salary
-    %th 
-    %th 
 
 %ul.members
   = render @members

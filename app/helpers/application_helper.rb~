@@ -3,18 +3,23 @@ module ApplicationHelper
   def select_tag_for_filter(member, nvpairs, params)
     options = { :query => params[:query] }
     _url = url_for(eval("#{member}_url(options)"))
-    <label for="show">Show:</label><br />
-    <select name="show" id="show"
-    onchange="window.location='#{_url}' + '?show=' + this.value">
+    _html = %{<label for="show">Show:</label><br />}
+    _html << %{<select name="show" id="show"}
+    _html << %{onchange="window.location='#{_url}' + '?show=' + this.value">}
     nvpairs.each do |pair|
-      _html.html_safe << %{<option value="#{pair[:scope]}"}
+      _html << %{<option value="#{pair[:scope]}"}
       if params[:show] == pair[:scope] || ((params[:show].nil? || 
   params[:show].empty?) && pair[:scope] == "all")
-      _html.html_safe << %{ selected="selected"}
+      _html << %{ selected="selected"}
       end
-      _html.html_safe << %{>#{pair[:label]}}
-      _html.html_safe << %{</option>}
+      _html << %{>#{pair[:label]}}
+      _html << %{</option>}
     end
-    _html.html_safe << %{</select>}
+    _html << %{</select>}
   end
+
+ def youtube_video
+    render :partial => 'shared/video'
+  end 
+
 end

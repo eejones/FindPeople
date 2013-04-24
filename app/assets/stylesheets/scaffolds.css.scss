@@ -239,3 +239,13 @@ p {
     }
   }
 }
+.filtertime{
+  input, textarea, select, option, .uneditable-input {
+    font-size: 1.2em;   
+    height: auto !important;
+    width: auto;
+    @include box_sizing;
+  }
+}
+
+

@@ -17,4 +17,9 @@ module ApplicationHelper
     end
     _html << %{</select>}
   end
+
+ def youtube_video
+    render :partial => 'shared/video'
+ end 
+
 end
