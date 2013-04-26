@@ -13,6 +13,8 @@
         = m.password_field :password
         = m.label "Password Confirmation"
         = m.password_field :password_confirmation
+        = m.label "Avatar"
+        = m.file_field :avatar
         %div.highlights
           %h1 Interests
         = m.label "Actor"

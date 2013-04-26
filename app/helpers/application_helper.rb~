@@ -18,8 +18,14 @@ module ApplicationHelper
     _html << %{</select>}
   end
 
- def youtube_video
-    render :partial => 'shared/video'
-  end 
+ def youtube_video(profilevid)
+   @member = Member.find(params[:id])
+   if profilevid
+     profilevid="http://www.youtube.com/embed/_O7iUiftbKU?feature=player_detailpage"
+     render :partial => 'shared/video'
+   else
+     render :partial => 'shared/video'
+   end
+ end 
 
 end

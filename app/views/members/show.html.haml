@@ -71,7 +71,9 @@
     %td= @member.salary
     %td= @member.credits
 
-= youtube_video @video.url
 
+
+%iframe{:allowfullscreen => "", :frameborder => "0", :height => "270", :src => @member.profilevid, :width => "480"}
+%br/
 = link_to 'Edit', edit_member_path(@member)
 = link_to 'Back', members_path
