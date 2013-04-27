@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130425024900) do
+ActiveRecord::Schema.define(:version => 20130427222515) do
 
   create_table "members", :force => true do |t|
     t.string   "username"
@@ -63,5 +63,17 @@ ActiveRecord::Schema.define(:version => 20130425024900) do
   add_index "members", ["username"], :name => "index_members_on_username", :unique => true
   add_index "members", ["wardrobe"], :name => "index_members_on_wardrobe"
   add_index "members", ["write"], :name => "index_members_on_write"
+
+  create_table "resumevids", :force => true do |t|
+    t.string   "rvideo"
+    t.string   "originvid"
+    t.string   "name"
+    t.text     "description"
+    t.integer  "member_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "resumevids", ["member_id"], :name => "index_resumevids_on_member_id"
 
 end

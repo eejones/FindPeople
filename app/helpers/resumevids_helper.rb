@@ -1,0 +1,2 @@
+module ResumevidsHelper
+end

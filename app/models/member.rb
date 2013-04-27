@@ -42,6 +42,7 @@ FILTERS = [
   {:scope => "paid",   :label => "Paid-only"}
 ]
 
+  has_many :resumevids, :dependent => :destroy
 
   private
 

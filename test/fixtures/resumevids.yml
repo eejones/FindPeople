@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  rvideo: MyString
+  originvid: MyString
+  name: MyString
+  description: MyText
+  member: 
+
+two:
+  rvideo: MyString
+  originvid: MyString
+  name: MyString
+  description: MyText
+  member: 

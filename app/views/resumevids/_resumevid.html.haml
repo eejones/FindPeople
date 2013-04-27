@@ -1,0 +1,11 @@
+%div.rvidstyle
+  %h2 Body of work videos
+  - @members.resumevids.each do |resumevid|
+    Name
+    =resumevid.name
+    Link
+    =resumevid.rvideo
+    %iframe{:allowfullscreen => "", :frameborder => "0", :height => "270", :src => resumevid.rvideo, :width => "480"} 
+    = link_to 'Remove Video', [resumevid.member, resumevid],
+               :confirm => 'Are you sure?',
+               :method => :delete %>

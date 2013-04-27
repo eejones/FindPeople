@@ -14,7 +14,7 @@
         = m.label "Password Confirmation"
         = m.password_field :password_confirmation
         = m.label "Avatar"
-        = @member.avatar.url(:thumb)
+        = image_tag @member.avatar.url(:thumb)
         = m.file_field :avatar
 
         %div.highlights

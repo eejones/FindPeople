@@ -73,7 +73,7 @@
 
 
 
-%iframe{:allowfullscreen => "", :frameborder => "0", :height => "180", :src => @member.profilevid, :width => "320"}
+%iframe{:allowfullscreen => "", :frameborder => "0", :height => "270", :src => @member.profilevid, :width => "480"}
 %br/
 = link_to 'Edit', edit_member_path(@member)
 = link_to 'Back', members_path

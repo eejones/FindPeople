@@ -70,10 +70,13 @@
     %td= @member.paid
     %td= @member.salary
     %td= @member.credits
-
-
-
-%iframe{:allowfullscreen => "", :frameborder => "0", :height => "270", :src => @member.profilevid, :width => "480"}
+    
+%div Body of work videos
+  - @members.resumevids.each do |resumevid|
+    = resumevid.name
+    %iframe{:allowfullscreen => "", :frameborder => "0", :height => "270", :src => resumevid.rvideo, :width => "480"}
+    = resumevid.description
+    = resumevid.datetime
 %br/
 = link_to 'Edit', edit_member_path(@member)
 = link_to 'Back', members_path

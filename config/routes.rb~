@@ -5,7 +5,6 @@ FindPeople::Application.routes.draw do
   match '/signup',  :to=> 'members#new'
   match '/signin',  :to=> 'sessions#new'
   match '/signout', :to=> 'sessions#destroy', :via=> :delete
-
   match '/help',    :to=> 'home#help'
   match '/about',   :to=> 'home#about'
   match '/contact', :to=> 'home#contact'
