@@ -110,15 +110,27 @@ input {
 
 .rvidstyle{
   h2{
-    text-align: center;
+    text-align: left;
     font-weight: bold;
     padding: 5px 5px 5px 15px;
     font-size: 18px;
     margin: 0px;
     margin-bottom: 0px;
-    background-color: #c00;
-    color: $reddish;
+    background-color: $white;
+    color: $black;
   }
+  h3{
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 13px;
+    margin: 0px;
+    margin-bottom: 0px;
+    background-color: $white;
+    color: $black;
+  }
+
+}
 .awesome{
   h1{
     text-align: center;

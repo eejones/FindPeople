@@ -71,12 +71,16 @@
     %td= @member.salary
     %td= @member.credits
     
-%div Body of work videos
-  - @members.resumevids.each do |resumevid|
-    = resumevid.name
-    %iframe{:allowfullscreen => "", :frameborder => "0", :height => "270", :src => resumevid.rvideo, :width => "480"}
-    = resumevid.description
-    = resumevid.datetime
+%br
+%br
+%div.rvidstyle
+  %h2 Body of work videos
+  = render @member.resumevids
+  %br
+  %h3 Add a video to your body of work
+  = render "resumevids/form"
+  
+
 %br/
 = link_to 'Edit', edit_member_path(@member)
 = link_to 'Back', members_path

@@ -1,12 +1,9 @@
-= form_for([@member, @member.resumevid.build]) do |f|
-  %div.field
-    = f.label :name
-    = f.text_field :name
+= form_for([@member, @member.resumevids.build]) do |f|
   %div.field
     = f.label :name
     = f.text_field :name
     = f.label :rvideo
-    = f.rvideo
+    = f.text_field :rvideo
     = f.label :description
     = f.text_area :description
   %div.actions

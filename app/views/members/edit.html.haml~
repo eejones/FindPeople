@@ -57,7 +57,12 @@
         = m.check_box :admin
         = m.label :profilevid
         = m.text_field :profilevid
+        %h2 Body of work videos
+        = render @member.resumevids
+        %div.rvidstyle
+          Add a video to your body of work
+          = render "resumevids/form"
         = m.submit "Save changes", :class=> "btn btn-large btn-primary"
-
+               
 = link_to 'Show', @member |
 = link_to 'Back', members_path

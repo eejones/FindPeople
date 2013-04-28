@@ -1,12 +1,9 @@
-= form_for([@post, @post.comments.build]) do |f|
+= form_for([@member, @member.resumevids.build]) do |f|
   %div.field
     = f.label :name
     = f.text_field :name
-  %div.field
-    = f.label :name
-    = f.text_field :name
-    = f.label :rvideo
-    = f.rvideo
+    = f.label :resumevid
+    = f.text_field :resumevid
     = f.label :description
     = f.text_area :description
   %div.actions
