@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/eejones/EmbedLogic.git
-  revision: 03db7126f2281db8efecba29b3b70ab8b211d4b9
+  revision: 84104484b4fb42c21e6b8d370c53942a89b17815
   specs:
     embed_logic (0.0.1)
       rails (~> 3.2.13)
