@@ -15,9 +15,11 @@ gem 'bootstrap-will_paginate', '0.0.6'
 gem 'haml'
 gem 'haml-rails'
 gem 'sqlite3'
-gem "paperclip", "~> 2.7"
-gem "cocaine", '0.4.0'
+gem 'paperclip', '~> 2.7'
+gem 'cocaine', '0.4.0'
 gem 'json'
+
+gem 'embed_logic', :git => gem 'censor_for_seven_words', :git => 'https://github.com/eejones/EmbedLogic.git'
 
 # Gems used only for assets and not required
 # in production environments by default.

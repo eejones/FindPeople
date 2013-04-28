@@ -71,13 +71,16 @@
     %td= @member.salary
     %td= @member.credits
     
+%br
+%br
 %div.rvidstyle
   %h2 Body of work videos
   = render @member.resumevids
   %br
   %h3 Add a video to your body of work
   = render "resumevids/form"
-  
+  %h3 Count of videos
+  = @member.resumevids.count
 
 %br/
 = link_to 'Edit', edit_member_path(@member)

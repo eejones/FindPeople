@@ -19,6 +19,8 @@ gem 'paperclip', '~> 2.7'
 gem 'cocaine', '0.4.0'
 gem 'json'
 
+gem 'embed_logic', :git => 'https://github.com/eejones/EmbedLogic.git'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

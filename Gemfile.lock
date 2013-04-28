@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/eejones/EmbedLogic.git
+  revision: 03db7126f2281db8efecba29b3b70ab8b211d4b9
+  specs:
+    embed_logic (0.0.1)
+      rails (~> 3.2.13)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -113,7 +120,7 @@ GEM
     ref (1.0.4)
     ruby_parser (3.1.3)
       sexp_processor (~> 4.1)
-    sass (3.2.7)
+    sass (3.2.8)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
@@ -149,6 +156,7 @@ DEPENDENCIES
   bootstrap-will_paginate (= 0.0.6)
   cocaine (= 0.4.0)
   coffee-rails (~> 3.2.1)
+  embed_logic!
   faker (= 1.0.1)
   haml
   haml-rails

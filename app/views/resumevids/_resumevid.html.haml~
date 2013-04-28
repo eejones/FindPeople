@@ -5,8 +5,11 @@
       =resumevid.name
     %h3 Embedded Link:
     =resumevid.rvideo
-    %h3 Original Link:
+    %h3 Originvid field:
     =resumevid.originvid
+
+    %h3 Super Embedded Link:
+    = ("http://www.youtube.com/watch?v=xVrJ8DxECbg").embedded
     %br
     %iframe{:allowfullscreen => "", :frameborder => "0", :height => "270", :src => resumevid.rvideo, :width => "480"} 
     %br
