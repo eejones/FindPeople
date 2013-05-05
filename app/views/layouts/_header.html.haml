@@ -1,11 +1,15 @@
 %header{:class=>"navbar navbar-fixed-top navbar-inverse"}
   %div.navbar-inner
     %div.container
-      = link_to("Member Information", root_path, {:id=> "logo"})
+      - if signed_in?
+        = link_to(@current_member.username, current_member, {:id=> "logo"})
+      - else   
+        = link_to("Member Information", root_path, {:id=> "logo"})
       %nav
         %ul{:class=>"nav pull-right"}
           %li= link_to "Home", root_path
           %li= link_to "Help", help_path
+          %li= link_to "About", about_path
           - if signed_in?
             %li= link_to "Members", members_path
             %li{:id=>"fat-menu", :class=>"dropdown"}

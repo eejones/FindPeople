@@ -3,7 +3,10 @@
   %aside.span4
     %section
       %div.betterheading
-        %h1= @member.username
+        %h1
+          = @member.username
+            
+          %img{:src=>@member.avatar.url(:thumb), :width=>"32",:height=>"32"}
 %p{:id=>"notice"}
   = notice
 %table.erictable
@@ -19,7 +22,8 @@
 
 %div.form-inline
   %br
-  %h3 Attributes
+  %h3.betterheading
+    Attributes
   = form_for (@member) do |m|
     = m.label "Act:"
     = @member.act
@@ -75,7 +79,7 @@
     = link_to 'Edit Profile', edit_member_path(@member)
 %div.rvidstyle
   %h2 Body of work videos
-  %b Total videos:
+  Total videos:
   = @member.resumevids.count
 
   %ul= render @member.resumevids
