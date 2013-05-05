@@ -10,71 +10,70 @@
     %th Username:
     %th Email:
   %COLGROUP
-    %COL{:width=>"80"}
-    %COL{:width=>"80"}
+    %COL{:width=>"200"}
+    %COL{:width=>"300"}
   %tr
     %td= @member.username
     %td= @member.email
-%table.erictable
-  %tr
-    %th Act:
-    %th Produce:
-    %th Direct:
-    %th Camera:
-    %th Extra:
-    %th Pa:
-    %th Write:
-    %th Sound:
-    %th Wardrobe:
-    %th Setdesign:
-    %th Stunt:
-    %th Marketing:
-    %th Other:
-    %th What:
-    %th Paid:
-    %th Salary:
-    %th Credits:
-  %COLGROUP
-    %COL{:width=>"60"}
-    %COL{:width=>"60"}
-    %COL{:width=>"60"}
-    %COL{:width=>"60"}
-    %COL{:width=>"60"}
-    %COL{:width=>"60"}
-    %COL{:width=>"60"}
-    %COL{:width=>"60"}
-    %COL{:width=>"60"}
-    %COL{:width=>"60"}
-    %COL{:width=>"60"}
-    %COL{:width=>"60"}
-    %COL{:width=>"60"}
-    %COL{:width=>"60"}
-    %COL{:width=>"60"}
-    %COL{:width=>"60"}
-    %COL{:width=>"60"}
-  %tr
-    %td= @member.act
-    %td= @member.produce
-    %td= @member.direct
-    %td= @member.camera
-    %td= @member.extra
-    %td= @member.pa
-    %td= @member.write
-    %td= @member.sound
-    %td= @member.wardrobe
-    %td= @member.setdesign
-    %td= @member.stunt
-    %td= @member.marketing
-    %td= @member.other
-    %td= @member.what
-    %td= @member.paid
-    %td= @member.salary
-    %td= @member.credits
-    
-%br
-%br
+
+%div.form-inline
+  %br
+  %h3 Attributes
+  = form_for (@member) do |m|
+    = m.label "Act:"
+    = @member.act
+    |    
+    = m.label "Produce:"
+    = @member.produce
+    |    
+    = m.label "Direct:"
+    = @member.direct
+    |    
+    = m.label "Camera:"
+    = @member.camera
+    |     
+    = m.label "Extra:"
+    = @member.extra
+    |    
+    = m.label "Pa:"
+    = @member.pa
+    |   
+    = m.label "Write:"
+    = @member.write
+    |   
+    = m.label "Sound:"
+    = @member.sound
+    %br
+    = m.label "Wardrobe:"
+    = @member.wardrobe
+    |   
+    = m.label "Setdesign:"
+    = @member.setdesign
+    |   
+    = m.label "Stunt:"
+    = @member.stunt
+    |   
+    = m.label "Marketing:"
+    = @member.marketing
+    |   
+    = m.label "Other:"
+    = @member.other
+    |   
+    = m.label "What:"
+    = @member.what
+    |   
+    = m.label "Paid:"
+    = @member.paid
+    |   
+    = m.label "Salary:"
+    = @member.salary
+    %br
+    = m.label "Credits:"
+    = @member.credits
+    %br
+    = link_to 'Edit Profile', edit_member_path(@member)
 %div.rvidstyle
-  %h2 Body of work videos
+  %h1 Body of work videos
   = render @member.resumevids
   %br
   %h3 Add a video to your body of work

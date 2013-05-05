@@ -1,15 +1,11 @@
 %div.rvidstyle
   - @member.resumevids.each do |resumevid|
-    %h3
-      Name
-      =resumevid.name
-    %h3 Embedded Link:
-    =resumevid.rvideo
-    %h3 Originvid field:
+    %b Name:
+    =resumevid.name
+    %b Embedded Link:
     =resumevid.originvid.embedded
-
-    %h3 Super Embedded Link:
-    = ("http://www.youtube.com/watch?v=xVrJ8DxECbg").embedded
+    %b Original Link(prior to translating to embedded code):
+    =resumevid.originvid
     %br
     %iframe{:allowfullscreen => "", :frameborder => "0", :height => "270", :src => resumevid.originvid.embedded, :width => "480"} 
     %br

@@ -27,6 +27,29 @@ body {
   line-height: 18px;
 }
 
+.showmembers {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 18px;
+  white-space: nowrap;
+    p, ol, ul, td, label {
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 18px;
+    white-space: nowrap;
+    display: block;
+  }
+  h1{
+    text-align: left;
+    font-weight: bold;
+    padding: 3px 3px 3px 15px;
+    font-size: 29px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff;
+  }
+}
 .center {
   text-align: center;
   h1 {
@@ -112,15 +135,16 @@ input {
   h2{
     text-align: left;
     font-weight: bold;
-    padding: 5px 5px 5px 15px;
+    padding: 5px 5px 5px 0px;
     font-size: 18px;
     margin: 0px;
     margin-bottom: 0px;
     background-color: $white;
     color: $black;
+    white-space: nowrap;
   }
   h3{
-    text-align: center;
+    text-align: left;
     font-weight: bold;
     padding: 5px 5px 5px 15px;
     font-size: 13px;
@@ -128,6 +152,18 @@ input {
     margin-bottom: 0px;
     background-color: $white;
     color: $black;
+    white-space: nowrap;
+  }
+  label{
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 0px;
+    font-size: 18px;
+    margin: 0px;
+    margin-bottom: 0px;
+    background-color: $white;
+    color: $black;
+    white-space: nowrap;
   }
 
 }
