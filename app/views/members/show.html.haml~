@@ -2,7 +2,8 @@
 %div{:class=>"row"}
   %aside.span4
     %section
-      %h1= @member.username
+      %div.betterheading
+        %h1= @member.username
 %p{:id=>"notice"}
   = notice
 %table.erictable
@@ -73,14 +74,14 @@
     %br
     = link_to 'Edit Profile', edit_member_path(@member)
 %div.rvidstyle
-  %h1 Body of work videos
-  = render @member.resumevids
+  %h2 Body of work videos
+  %b Total videos:
+  = @member.resumevids.count
+
+  %ul= render @member.resumevids
   %br
   %h3 Add a video to your body of work
   = render "resumevids/form"
-  %h3 Count of videos
-  = @member.resumevids.count
-
 %br/
 = link_to 'Edit', edit_member_path(@member)
 = link_to 'Back', members_path

@@ -26,6 +26,18 @@ body {
   font-size: 13px;
   line-height: 18px;
 }
+.betterheading{
+  h1{
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 0px;
+    font-size: 32px;
+    margin: -7px;
+    margin-bottom: 0px;
+    color: $black;
+  }
+}    
+
 
 .showmembers {
   font-family: verdana, arial, helvetica, sans-serif;
@@ -172,8 +184,15 @@ input {
     white-space: nowrap;
     display: block;
   }
-
-
+  ul{
+    list-style-type: none;
+  }
+  hr {
+    color: $graydark;
+    background-color: $graydark;
+    height: 2px;
+    border: none;
+    }
 }
 .awesome{
   h1{
