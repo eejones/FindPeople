@@ -71,7 +71,6 @@ class MembersController < ApplicationController
   # PUT /members/1.json
   def update
     @member = Member.find(params[:id])
-
     respond_to do |format|
       if @member.update_attributes(params[:member])
         sign_in @member

@@ -2,10 +2,10 @@
   %div.field
     = f.label :name
     = f.text_field :name
-    = f.label Link
+    = f.label :originvid
     = f.text_field :originvid
     = f.label :description
-    = f.text_area :description
+    = f.textarea{:cols=>"40", :id=>"resumevid_description", :name=>"resumevid[description]", :rows=>"20"}
   %div.actions
     = f.submit
 

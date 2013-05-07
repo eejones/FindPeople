@@ -115,6 +115,8 @@ div {
   }
 }
 
+
+
 #notice {
   color: green;
 }
@@ -210,6 +212,9 @@ input {
     height: 2px;
     border: none;
     }
+  text_area{
+    rows: "5";
+  }
 }
 .awesome{
   h1{
@@ -409,5 +414,29 @@ p {
     @include box_sizing;
   }
 }
+/* footer */
 
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: $graydark;
+  a {
+    color: $black;
+    &:hover { 
+    color: $white;
+    }
+  }
+  small {
+  float: left;
+  }
+  ul {
+  float: right;
+  list-style: none;
+     li {
+     float: left;
+     margin-left: 10px;
+     }
+  }
+}
 

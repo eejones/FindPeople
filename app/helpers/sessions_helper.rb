@@ -10,7 +10,6 @@ module SessionsHelper
   end
 
   def current_member=(member)
-    # 'self.current_member = ...' is automatically converted to 'current_member=(...)'
     @current_member=member
   end
 
