@@ -3,7 +3,6 @@ class MembersController < ApplicationController
   # GET /members.json
 
   before_filter :signed_in_member, :only=> [:index, :edit, :update]
-#  before_filter :correct_member, :only=> [:edit, :update]
   before_filter :admin_member, :only=> :destroy
 
   def index
@@ -17,12 +16,6 @@ class MembersController < ApplicationController
         format.json { render json: @members }
       end
     end  
-#    @members = Member.actors.paginate(:page=> params[:page])
-#    @members = @members.paginate(:page=> params[:page])
-#    respond_to do |format|
-#      format.html # index.html.erb
-#      format.json { render json: @members }
-#    end
   end
 
   # GET /members/1

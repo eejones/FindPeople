@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130427222515) do
+ActiveRecord::Schema.define(:version => 20130518213852) do
 
   create_table "members", :force => true do |t|
     t.string   "username"
@@ -44,6 +44,9 @@ ActiveRecord::Schema.define(:version => 20130427222515) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.string   "profilevid"
+    t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "members", ["act"], :name => "index_members_on_act"

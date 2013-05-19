@@ -11,9 +11,6 @@ class ResumevidsController < ApplicationController
         format.json { render :json => @resumevid.errors, :status => :unprocessable_entity }
       end
     end
-#    @resumevid.rvideo=@resumevid.originvid.replace(/(?:http:\/\/)?(?:www\.)?(?:youtube\.com|youtu\.be)\/(?:watch\?v=)?(.+)/, '<iframe width="420" height="345" src="http://www.youtube.com/embed/$1" frameborder="0" allowfullscreen></iframe>')
-#    @resumevid.rvideo=@resumevid.originvid.replace(/(?:http:\/\/)?(?:www\.)?(?:youtube\.com|youtu\.be)\/(?:watch\?v=)?(.+)/, 'http://www.youtube.com/embed/$1')
-#   redirect_to member_edit_path(@member)
   end
 
   def destroy
@@ -22,4 +19,29 @@ class ResumevidsController < ApplicationController
     @resumevid.destroy
     redirect_to edit_member_path(@member)
   end
+
+  def testembedded
+    oldcode=self.dup
+    #youtube
+    if oldcode =~ /(?:youtube\.com|youtu\.be)/
+      newcode="http://www.youtube.com/embed/" + (oldcode.match(/(?:http:\/\/)?(?:www\.)?(?:youtube\.com|youtu\.be)\/(?:watch\?v=)?(.+)/))[1]+ "?feature=player_detailpage"
+    #vimeo
+    elsif oldcode =~ /(?:vimeo)/
+      newcode="http://player.vimeo.com/video/" + (oldcode.match(/(?:http:\/\/)?(?:www\.)?(?:vimeo\.com)\/?(.+)/))[1]
+    #hulu
+    elsif oldcode =~ /(?:hulu\.com)/
+      newcode=oldcode
+    #dailymotion
+    elsif oldcode =~ /(?:dailymotion\.com)/
+      newcode="http://www.dailymotion.com/embed/" + (oldcode.match(/(?:http:\/\/)?(?:www\.)?(?:dailymotion\.com)\/(?:video)?(.*?)_/))[1]
+    #metacafe 
+    elsif oldcode =~ /(?:metacafe\.com)/
+      newcode= "http://www.metacafe.com/embed/" + (oldcode.match(/(?:http:\/\/)?(?:www\.)?(?:metacafe\.com)\/(?:watch)\/(.*?)\//))[1] + "/"
+    #myspace
+    elsif oldcode =~ /(?:myspace\.com)/
+      newcode= "http://mediaservices.myspace.com/services/media/embed.aspx/m=" + (oldcode.match(/(\d*)\Z/))[1] + ",t=1,mt=video"
+    end
+    newcode
+  end
+
 end

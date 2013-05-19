@@ -1,4 +1,6 @@
 - provide(:title, @member.username)
+%head
+
 %div{:class=>"row"}
   %aside.span4
     %section
@@ -76,7 +78,25 @@
     = m.label "Credits:"
     = @member.credits
     %br
+    = m.label "Address:"
+    = @member.address
+    %br
+    = m.label "Latitude:"
+    = @member.latitude
+    %br
+    = m.label "Longitude:"
+    = @member.longitude
+    %br
+    = m.label "Other Users Near You:"
+    %ul
+      = render @member.nearbys(100)
+    %br
+    = image_tag "http://www.mapquestapi.com/staticmap/v4/getmap?key=Fmjtd%7Cluub2duynh%2C2l%3Do5-9u2s1u&center=#{@member.latitude},#{@member.longitude}&zoom=5&size=400,200&type=map&imagetype=jpeg&pois=1,#{@member.latitude},#{@member.longitude},-20,-20|orange-100,#{@member.latitude},#{@member.longitude}|green,#{@member.latitude},#{@member.longitude}|yellow-s,#{@member.latitude},#{@member.longitude}"
+    %br
+
     = link_to 'Edit Profile', edit_member_path(@member)
+
+
 %div.rvidstyle
   %h2 Body of work videos
   Total videos:

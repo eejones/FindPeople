@@ -4,4 +4,5 @@ class Resumevid < ActiveRecord::Base
   VALID_ORIGINVID_REGEX = /(?:youtube\.com|youtu\.be)|(?:vimeo\.com)/
   validates :originvid, :presence=>   true, :format=> { with: VALID_ORIGINVID_REGEX }
   validates :name, :presence=> true, :length=> { :maximum=> 100 }
+
 end

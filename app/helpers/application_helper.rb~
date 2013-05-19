@@ -19,7 +19,6 @@ module ApplicationHelper
   end
 
  def youtube_video(profilevid)
-   @member = Member.find(params[:id])
    if profilevid
      profilevid="http://www.youtube.com/embed/_O7iUiftbKU?feature=player_detailpage"
      render :partial => 'shared/video'
@@ -27,5 +26,29 @@ module ApplicationHelper
      render :partial => 'shared/video'
    end
  end 
+
+  def testembedded
+    oldcode=self.dup
+    #youtube
+    if oldcode =~ /(?:youtube\.com|youtu\.be)/
+      newcode="http://www.youtube.com/embed/" + (oldcode.match(/(?:http:\/\/)?(?:www\.)?(?:youtube\.com|youtu\.be)\/(?:watch\?v=)?(.+)/))[1]+ "?feature=player_detailpage"
+    #vimeo
+    elsif oldcode =~ /(?:vimeo)/
+      newcode="http://player.vimeo.com/video/" + (oldcode.match(/(?:http:\/\/)?(?:www\.)?(?:vimeo\.com)\/?(.+)/))[1]
+    #hulu
+    elsif oldcode =~ /(?:hulu\.com)/
+      newcode=oldcode
+    #dailymotion
+    elsif oldcode =~ /(?:dailymotion\.com)/
+      newcode="http://www.dailymotion.com/embed/" + (oldcode.match(/(?:http:\/\/)?(?:www\.)?(?:dailymotion\.com)\/(?:video)?(.*?)_/))[1]
+    #metacafe 
+    elsif oldcode =~ /(?:metacafe\.com)/
+      newcode= "http://www.metacafe.com/embed/" + (oldcode.match(/(?:http:\/\/)?(?:www\.)?(?:metacafe\.com)\/(?:watch)\/(.*?)\//))[1] + "/"
+    #myspace
+    elsif oldcode =~ /(?:myspace\.com)/
+      newcode= "http://mediaservices.myspace.com/services/media/embed.aspx/m=" + (oldcode.match(/(\d*)\Z/))[1] + ",t=1,mt=video"
+    end
+    newcode
+  end
 
 end

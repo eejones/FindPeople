@@ -1,11 +1,6 @@
-class Resumevid < ActiveRecord::Base
-  belongs_to :member
-  attr_accessible :description, :name, :originvid, :rvideo
-  VALID_ORIGINVID_REGEX = /(?:youtube\.com|youtu\.be)|(?:vimeo\.com)/
-  validates :originvid, :presence=>   true, :format=> { with: VALID_ORIGINVID_REGEX }
-  validates :name, :presence=> true, :length=> { :maximum=> 100 }
+module ResumevidsHelper
 
-  def testembedded
+  def self.testembedded
     oldcode=self.dup
     #youtube
     if oldcode =~ /(?:youtube\.com|youtu\.be)/
@@ -28,5 +23,6 @@ class Resumevid < ActiveRecord::Base
     end
     newcode
   end
+
 
 end

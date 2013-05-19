@@ -1,5 +1,6 @@
 class Member < ActiveRecord::Base
-  attr_accessible :act, :camera, :credits, :direct, :extra, :marketing, :other, :pa, :paid, :password, :password_confirmation, :produce, :salary, :setdesign, :sound, :stunt, :username, :wardrobe, :what, :write, :email, :admin, :avatar, :profilevid
+  attr_accessible :act, :camera, :credits, :direct, :extra, :marketing, :other, :pa, :paid, :password, :password_confirmation, :produce, :salary, :setdesign, :sound, :stunt, :username, :wardrobe, :what, :write, :email, :admin, :avatar, :profilevid, :address, :latitude, :longitude
+  geocoded_by :address
   has_secure_password
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "noface.jpeg"
 
@@ -42,6 +43,7 @@ FILTERS = [
   {:scope => "paid",   :label => "Paid-only"}
 ]
 
+  after_validation :geocode
   has_many :resumevids, :dependent => :destroy
 
   private
