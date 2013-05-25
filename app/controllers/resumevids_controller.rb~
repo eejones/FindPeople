@@ -17,31 +17,9 @@ class ResumevidsController < ApplicationController
     @member = Member.find(params[:member_id])
     @resumevid = @member.resumevids.find(params[:id])
     @resumevid.destroy
-    redirect_to edit_member_path(@member)
-  end
-
-  def testembedded
-    oldcode=self.dup
-    #youtube
-    if oldcode =~ /(?:youtube\.com|youtu\.be)/
-      newcode="http://www.youtube.com/embed/" + (oldcode.match(/(?:http:\/\/)?(?:www\.)?(?:youtube\.com|youtu\.be)\/(?:watch\?v=)?(.+)/))[1]+ "?feature=player_detailpage"
-    #vimeo
-    elsif oldcode =~ /(?:vimeo)/
-      newcode="http://player.vimeo.com/video/" + (oldcode.match(/(?:http:\/\/)?(?:www\.)?(?:vimeo\.com)\/?(.+)/))[1]
-    #hulu
-    elsif oldcode =~ /(?:hulu\.com)/
-      newcode=oldcode
-    #dailymotion
-    elsif oldcode =~ /(?:dailymotion\.com)/
-      newcode="http://www.dailymotion.com/embed/" + (oldcode.match(/(?:http:\/\/)?(?:www\.)?(?:dailymotion\.com)\/(?:video)?(.*?)_/))[1]
-    #metacafe 
-    elsif oldcode =~ /(?:metacafe\.com)/
-      newcode= "http://www.metacafe.com/embed/" + (oldcode.match(/(?:http:\/\/)?(?:www\.)?(?:metacafe\.com)\/(?:watch)\/(.*?)\//))[1] + "/"
-    #myspace
-    elsif oldcode =~ /(?:myspace\.com)/
-      newcode= "http://mediaservices.myspace.com/services/media/embed.aspx/m=" + (oldcode.match(/(\d*)\Z/))[1] + ",t=1,mt=video"
+    respond_to do |format|
+      format.html { redirect_to member_path }
+      format.js
     end
-    newcode
   end
-
 end

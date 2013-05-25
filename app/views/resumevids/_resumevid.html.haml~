@@ -1,15 +1,21 @@
-%li
-  %b Name:
-  =resumevid.name
-  %b Embedded Link:
-  =resumevid.originvid.embedded
-  %b Original Link(prior to translating to embedded code):
-  =resumevid.originvid
-  %br
-  %iframe{:allowfullscreen => "", :frameborder => "0", :height => "270", :src => resumevid.originvid.embedded, :width => "480"} 
-  %br
-  = link_to 'Remove Video', [resumevid.member, resumevid],
-             :confirm => 'Are you sure?',
-             :method => :delete
-  %br
-%hr
+%div#resumevid_form
+  %li
+    %b Name:
+    =resumevid.name
+    %b Embedded Link:
+    =resumevid.originvid.embedded
+    %b Original Link(prior to translating to embedded code):
+    =resumevid.originvid
+    %br
+    %iframe{:allowfullscreen => "", :frameborder => "0", :height => "270", :src => resumevid.originvid.embedded, :width => "480"} 
+    %br
+    = link_to 'Remove Video', [resumevid.member, resumevid],
+               :confirm => 'Are you sure?',
+               :method => :delete
+    = link_to 'Destroy', [resumevid.member, resumevid],
+               :confirm => 'Are you sure that you want to delete?',
+               :method=> :delete,
+               :class=>"delete",
+               :remote => true
+    %br
+  %hr

@@ -1,0 +1,4 @@
+\/* Use fading when removing a video */
+$("#resumevids_page").html('video removed');
+\/* Replace the count of videos */
+$("#resumevids_count").html("#{pluralize(@member.resumevids.count, 'Video')}");

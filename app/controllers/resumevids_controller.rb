@@ -17,6 +17,9 @@ class ResumevidsController < ApplicationController
     @member = Member.find(params[:member_id])
     @resumevid = @member.resumevids.find(params[:id])
     @resumevid.destroy
-    redirect_to edit_member_path(@member)
+    respond_to do |format|
+      format.html { redirect_to member_path(@member) }
+      format.js
+    end
   end
 end
