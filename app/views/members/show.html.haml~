@@ -106,6 +106,7 @@
   %br
   %h3 Add a video to your body of work
   = render "resumevids/form"
+  %div#resumevids_test
 %br/
 = link_to 'Edit', edit_member_path(@member)
 = link_to 'Back', members_path

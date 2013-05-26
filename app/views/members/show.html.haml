@@ -102,9 +102,9 @@
   Total videos:
   %div#resumevids_count
     = @member.resumevids.count
-  %ul= render :partial => @member.resumevids, :locals => { :list => true }
-  %br
   %div#resumevids_test
+    %ul= render :partial => @member.resumevids, :locals => { :list => true }
+  %br
   %h3 Add a video to your body of work
   = render "resumevids/form"
 %br/
