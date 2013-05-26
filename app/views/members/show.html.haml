@@ -106,7 +106,8 @@
     %ul= render :partial => @member.resumevids, :locals => { :list => true }
   %br
   %h3 Add a video to your body of work
-  = render "resumevids/form"
+  %div#newcreated
+    = render "resumevids/form"
 %br/
 = link_to 'Edit', edit_member_path(@member)
 = link_to 'Back', members_path

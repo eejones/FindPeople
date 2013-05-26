@@ -150,9 +150,18 @@ div {
   }
 }
 
-input, textarea, select, .uneditable-input {
+input, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
+  padding: 10px;
+  margin-bottom: 50px;
+  @include box_sizing;
+}
+
+textarea{
+  border: 1px solid #bbb;
+  width: 100%;
+  height: 10%;
   padding: 10px;
   margin-bottom: 50px;
   @include box_sizing;

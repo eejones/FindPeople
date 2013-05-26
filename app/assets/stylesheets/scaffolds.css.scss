@@ -161,10 +161,10 @@ input, select, .uneditable-input {
 textarea{
   border: 1px solid #bbb;
   width: 100%;
+  height: 100px;
   padding: 10px;
   margin-bottom: 50px;
   @include box_sizing;
-  rows: "1";
 }
 
 input {

@@ -102,11 +102,12 @@
   Total videos:
   %div#resumevids_count
     = @member.resumevids.count
-  %ul= render :partial => @member.resumevids, :locals => { :list => true }
+  %div#resumevids_test
+    %ul= render :partial => @member.resumevids, :locals => { :list => true }
   %br
   %h3 Add a video to your body of work
-  = render "resumevids/form"
-  %div#resumevids_test
+  #newcreated
+    = render "resumevids/form"
 %br/
 = link_to 'Edit', edit_member_path(@member)
 = link_to 'Back', members_path

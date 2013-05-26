@@ -1,8 +1,6 @@
 /* Replace the count of videos */
 $("#resumevids_count").html("#{pluralize(@member.resumevids.count, 'Video')}");
 /* add the created video */
-$("#resumevids_test").html("#{= escape_javascript(render(:partial=>@member.resumevids))}");
-/* add the created video */
-$("#resumevids_updatedpage").html('#resumevid_#{@resumevid.id}');
+$("#resumevids_test").html("#{escape_javascript(render(:partial=>@member.resumevids))}");
 /* create new blank form */
-$("#newcreated").haml("= render 'resumevids/form'")
+$("#newcreated").haml("#{escape_javascript(render(:partial=>'resumevids/form'))}")
