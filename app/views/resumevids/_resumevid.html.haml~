@@ -1,4 +1,4 @@
-%div#resumevid_form
+= div_for(resumevid)
   %li
     %b Name:
     =resumevid.name
@@ -14,8 +14,8 @@
                :method => :delete
     = link_to 'Destroy', [resumevid.member, resumevid],
                :confirm => 'Are you sure that you want to delete?',
-               :method=> :delete,
                :class=>"delete",
+               :method=> :delete,
                :remote => true
     %br
   %hr

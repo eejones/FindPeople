@@ -58,12 +58,19 @@
         = m.label :profilevid
         = m.text_field :profilevid
         = m.label :address
-        = m.text_box :address
+        = m.text_field :address
 
         %div.rvidstyle
           %h2 Body of work videos
-          = render @member.resumevids
-        = m.submit "Save changes", :class=> "btn btn-large btn-primary"
-               
+          Total videos:
+          %div#resumevids_count
+            = @member.resumevids.count
+          %div#resumevids_load
+            %ul= render :partial => @member.resumevids, :locals => { :list => true }
+          %br
+          %h3 Add a video to your body of work
+          %div#resumevids_newcreation
+            = render "resumevids/form"
+= @member.update "Save changes", class: "btn btn-large btn-primary"
 = link_to 'Show', @member |
 = link_to 'Back', members_path

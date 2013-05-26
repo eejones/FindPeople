@@ -4,11 +4,11 @@ class ResumevidsController < ApplicationController
     @resumevid=@member.resumevids.create(params[:resumevid])
     respond_to do |format|
       if @resumevid.save
-        format.html { redirect_to member_path(@member), :notice => 'Video was successfully added.' }
-        format.json { render :json => @resumevid, :status => :created, :location => @resumevid }
+        format.html { redirect_to edit_member_path(@member), :notice => 'Video was successfully added.' }
+        format.js
       else
-        format.html { redirect_to member_path(@member), :notice => 'Unprocessable video entry' }
-        format.json { render :json => @resumevid.errors, :status => :unprocessable_entity }
+        format.html { redirect_to edit_member_path(@member), :notice => 'Unprocessable video entry' }
+        format.js
       end
     end
   end
@@ -18,7 +18,7 @@ class ResumevidsController < ApplicationController
     @resumevid = @member.resumevids.find(params[:id])
     @resumevid.destroy
     respond_to do |format|
-      format.html { redirect_to member_path }
+      format.html { redirect_to member_path(@member) }
       format.js
     end
   end

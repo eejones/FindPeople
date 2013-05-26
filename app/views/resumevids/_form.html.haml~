@@ -1,11 +1,12 @@
-= form_for([@member, @member.resumevids.build]) do |f|
-  %div.field
-    = f.label :name
-    = f.text_field :name
-    = f.label :originvid
-    = f.text_field :originvid
-    = f.label :description
-    = f.textarea{:cols=>"40", :id=>"resumevid_description", :name=>"resumevid[description]", :rows=>"20"}
-  %div.actions
-    = f.submit
+%div%newcreated
+  = form_for([@member, @member.resumevids.build],:remote=>true) do |f|
+    %div.field
+      = f.label :name
+      = f.text_field :name
+      = f.label :originvid
+      = f.text_field :originvid
+      = f.label :description
+      = f.text_area :description
+    %div.actions
+      = f.submit
 
