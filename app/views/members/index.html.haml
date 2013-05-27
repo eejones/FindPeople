@@ -8,7 +8,7 @@
     %br/
     %select#show{:name => "show", :onchange => "window.location='\#{url_for(eval('#{'member'}_url({ :query => params[:query] })'))}' + '?show=' + this.value"}
       - @filters.each do |pair|
-        %option{:selected => 'selected', :value => pair[:scope]}
+        %option{:value => pair[:scope]}
           = pair[:label]
     = submit_tag 'Filter'
 
