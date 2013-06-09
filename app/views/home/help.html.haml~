@@ -1,4 +1,4 @@
 %div.awesome
-  %h1
+  %h1<
     This is a help page. If you are having problems, contact Eric.
-    %a{:href=>"http://github.com/eejones","Eric's GitHub account"}
+    %a{:href=>"http://github.com/eejones"}>Eric's GitHub account
