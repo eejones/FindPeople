@@ -54,7 +54,17 @@ body {
     white-space: nowrap;
   }
 }    
-
+.betterlisting{
+  label{
+    font-size: 15px;
+    padding: 3px 10px;
+    border: 5px;
+    border-radius: 20px;
+    margin: 2px 5px;
+    background-color: $graylight;
+    color: $black;
+  }
+}
 
 .showmembers {
   font-family: verdana, arial, helvetica, sans-serif;
@@ -236,7 +246,7 @@ input {
     text-align: center;
     padding: 5px 5px 5px 15px;
     font-weight: normal;
-    font-size: 22px;
+    font-size: 20px;
     margin: -7px;
     margin-bottom: 0px;
     background-color: $graylight;

@@ -1,6 +1,11 @@
 module MembersHelper
 
+
   def address_there?(member)
     !member.address.nil?
+  end
+
+  def attribute_there?(attribute)
+    member.attribute==true
   end
 end
