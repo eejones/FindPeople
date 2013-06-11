@@ -5,7 +5,7 @@
     = render 'shared/error_messages'
     %div.awesome
       = form_for (@member) do |m|
-        = m.label :username
+        = m.label "Username:"
         = m.text_field :username
         = m.label "Email"
         = m.text_field :email

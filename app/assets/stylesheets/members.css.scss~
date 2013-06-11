@@ -1,0 +1,62 @@
+// Place all the styles related to the Members controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$grayMediumLight: #eaeaea;
+$graydark: #999999;
+$white: #FFFFFF;
+$reddish: #CC0000;
+$black: #000000;
+$graylight: #EEEEEE;
+
+#specialbutton{
+  input[type="checkbox"]{
+    font-size: 15px;
+    padding: 3px 10px;
+    border: 5px;
+    border-radius: 20px;
+    margin: 2px 5px;
+    background-color: $graylight;
+    color: $black;
+      :hover{
+        color: $black;
+      }
+    }
+  input[type="checkbox"]:checked {
+    background-color:$black;
+    border-left-color:#06F;
+    border-right-color:#06F
+  }
+}
+
+.highlights{
+  h1{
+    text-align: left;
+    background-color: $white;
+    color: $black;
+    margin-top: 10px;
+    padding: 10px;
+    margin-bottom: 5px;
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 20px;
+    line-height: 20px;
+  }
+  input[type="checkbox"]{
+    font-size: 15px;
+    padding: 3px 10px;
+    border: 5px;
+    border-radius: 20px;
+    margin: 2px 5px;
+    background-color: $graylight;
+    color: $black;
+      :hover{
+        color: $black;
+      }
+    }
+  input[type="checkbox"]:checked {
+    background-color:$black;
+    border-left-color:#06F;
+    border-right-color:#06F
+  }
+
+}
