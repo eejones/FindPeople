@@ -138,8 +138,12 @@ div {
   }
 }
 
-
-
+.myaddresses{
+  visibility: hidden;
+  span:hover{
+    visibility: visible;
+  }
+}  
 #notice {
   color: green;
 }

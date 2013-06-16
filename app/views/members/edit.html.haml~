@@ -18,10 +18,9 @@
         = m.file_field :avatar
         %div#specialbutton.highlights
           %h1 Interests
+          = m.label "Actor"
           = m.check_box :act
-          .icon-off
-            = m.label "Actor"
-            = m.label "Producer"
+          = m.label "Producer"
           = m.check_box :produce
           = m.label "Director"
           = m.check_box :direct
@@ -71,6 +70,6 @@
           %h3 Add a video to your body of work
           %div#resumevids_newcreation
             = render "resumevids/form"
-        = m.submit "Save changes", class: "btn btn-large btn-primary"
+        = @member.submit "Save changes", class: "btn btn-large btn-primary"
 = link_to 'Show', @member |
 = link_to 'Back', members_path
