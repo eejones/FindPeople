@@ -67,9 +67,6 @@
           %div#resumevids_load
             %ul= render :partial => @member.resumevids, :locals => { :list => true }
           %br
-          %h3 Add a video to your body of work
-          %div#resumevids_newcreation
-            = render "resumevids/form"
-        = @member.submit "Save changes", class: "btn btn-large btn-primary"
+        = m.submit "Save changes", class: "btn btn-large btn-primary"
 = link_to 'Show', @member |
 = link_to 'Back', members_path

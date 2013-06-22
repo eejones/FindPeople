@@ -43,6 +43,7 @@ body {
     margin: -7px;
     margin-left: 5px;
     margin-bottom: 7px;
+    float: right;
   }
   h3{
     text-align: left;
@@ -143,7 +144,7 @@ div {
       display: none;
     }
     a:hover + span{
-      display: block;
+      display: inline;
     }
 }
   
@@ -304,6 +305,9 @@ input {
     margin-bottom: 0px;
     background-color: $white;
     color: $black;
+  }
+  image{
+    float: right;
   }
 
 }
@@ -511,6 +515,10 @@ p {
     height: auto !important;
     width: auto;
     @include box_sizing;
+  }
+  label{
+    padding: 0px 0px 0px 0px;
+    margin: -5px -5px -10px 0px;
   }
 }
 /* footer */

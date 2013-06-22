@@ -43,6 +43,7 @@ body {
     margin: -7px;
     margin-left: 5px;
     margin-bottom: 7px;
+    float: right;
   }
   h3{
     text-align: left;
@@ -305,6 +306,9 @@ input {
     background-color: $white;
     color: $black;
   }
+  image{
+    float: right;
+  }
 
 }
 .about{
@@ -511,6 +515,10 @@ p {
     height: auto !important;
     width: auto;
     @include box_sizing;
+  }
+  label{
+    padding: 0px 0px 0px 0px;
+    margin: -5px -5px -15px 0px;
   }
 }
 /* footer */

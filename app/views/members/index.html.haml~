@@ -7,37 +7,10 @@
     %label{:for => "show"} Show:
     %br/
     %select#show{:name => "show", :onchange => "window.location='\#{url_for(eval('#{'member'}_url({ :query => params[:query] })'))}' + '?show=' + this.value"}
-      %option{:value => "all",         :label => "All", :selected=>'#{this.value}'}
-        All
-      %option{:value => "actors",      :label => "Actors"}
-        Actors
-      %option{:value => "producers",    :label => "Producers"}
-        Producers
-      %option{:value => "directors",     :label => "Directors"}
-        Directors
-      %option{:value => "extras",   :label => "Extras"}
-        Extras
-      %option{:value => "pas",  :label => "PAs"}
-        PAs
-      %option{:value => "writers",   :label => "Writers"}
-        Writers
-      %option{:value => "sound",   :label => "Sound Engineers"}
-        Sound Engineers
-      %option{:value => "wardrobe",  :label => "Wardrobe"}
-        Wardrobe
-      %option{:value => "setdesign",   :label => "Set Design"}
-        Set Design
-      %option{:value => "stunt",   :label => "Stunt"}
-        Stunt
-      %option{:value => "marketing",  :label => "Marketing"}
-        Marketing
-      %option{:value => "paid",   :label => "Paid-only"}
-        Paid Only
-
+      - @filters.each do |pair|
+        %option{:value => pair[:scope]}
+          = pair[:label]
     = submit_tag 'Filter'
-
-    What is this
-    #{:value}
 
 = will_paginate
 
