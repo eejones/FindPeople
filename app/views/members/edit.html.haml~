@@ -1,4 +1,4 @@
-- provide(:title, 'Edit Member')
+- provide(:title, 'Edit Your Profile')
 %h1 Editing member
 %div.row
   %div.span6.offset3
