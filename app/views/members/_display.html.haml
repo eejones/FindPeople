@@ -1,0 +1,59 @@
+= form_for (@member) do |m|
+  - if attribute_there?(@member.act)
+    = m.label "Act"
+  - if attribute_there?(@member.produce)
+    = m.label "Produce"
+  - if attribute_there?(@member.direct)
+    = m.label "Direct"
+  - if attribute_there?(@member.camera)
+    = m.label "Camera"
+  - if attribute_there?(@member.extra)
+    = m.label "Extra"
+  - if attribute_there?(@member.pa)
+    = m.label "Pa:"
+  - if attribute_there?(@member.write)
+    = m.label "Write:"
+  - if attribute_there?(@member.sound)
+    = m.label "Sound"
+  - if attribute_there?(@member.wardrobe)
+    = m.label "Wardrobe"
+  - if attribute_there?(@member.setdesign)
+    = m.label "Setdesign"
+  - if attribute_there?(@member.stunt)
+    = m.label "Stunt"
+  - if attribute_there?(@member.marketing)
+    = m.label "Marketing"
+  - if attribute_there?(@member.other)
+    = m.label "Other"
+  - if attribute_there?(@member.what)
+    = m.label "What"
+  - if attribute_there?(@member.paid)
+    = m.label "Paid"
+  - if attribute_there?(@member.salary)
+    = m.label "Salary"
+  - if attribute_there?(@member.credits)
+    = m.label "Credits"
+    %br
+  - if address_there?(@member)
+    %br
+    Address:
+    = @member.address
+    %br
+    Latitude:
+    = @member.latitude
+    %br
+    Longitude:
+    = @member.longitude
+    %br
+    %ul
+      -unless @member.nearbys(1000).nil?
+        %br
+        %h3 Other Users Near You:
+        = render @member.nearbys(1000)
+    %br
+    %h3 Your Location:
+    %br
+    = image_tag "http://www.mapquestapi.com/staticmap/v4/getmap?key=Fmjtd%7Cluub2duynh%2C2l%3Do5-9u2s1u&center=#{@member.latitude},#{@member.longitude}&zoom=5&size=400,200&type=map&imagetype=jpeg&pois=1,#{@member.latitude},#{@member.longitude},-20,-20|orange-100,#{@member.latitude},#{@member.longitude}|green,#{@member.latitude},#{@member.longitude}|yellow-s,#{@member.latitude},#{@member.longitude}"
+    %br
+
+  = link_to 'Edit Profile', edit_member_path(@member)
