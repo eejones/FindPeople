@@ -10,9 +10,6 @@
     %iframe{:allowfullscreen => "", :frameborder => "0", :height => "270", :src => resumevid.originvid.embedded, :width => "480"} 
     %br
     - if current_member?(@member)
-      = link_to 'Remove Video', [resumevid.member, resumevid],
-               :confirm => 'Are you sure?',
-               :method => :delete
       = link_to 'Destroy', [resumevid.member, resumevid],
                :confirm => 'Are you sure that you want to delete?',
                :method=> :delete,

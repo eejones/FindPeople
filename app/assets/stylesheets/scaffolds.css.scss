@@ -88,6 +88,9 @@ body {
     width: 25px;
     height: 25px;
   }
+  li{
+    list-style-type: none;
+  }
 }
 
 .members{
@@ -272,6 +275,11 @@ input {
   }
   ul{
     list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  li{
+    list-style-type: none;
   }
   hr {
     color: $graydark;
@@ -315,7 +323,7 @@ input {
     margin-left: 10px;
     margin-bottom: 10px;
     @include box_sizing;
-    color: $grayMediumLight;
+    color: $graydark;
   }
   h2{
     text-align: center;

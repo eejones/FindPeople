@@ -31,9 +31,11 @@
 %div.rvidstyle
   %h2 Body of work videos
   Total videos:
-  %div#resumevids_count
+  %span#resumevids_count
     = @member.resumevids.count
-  %div#resumevids_test
+  %br
+  %br
+  %span#resumevids_test
     %ul= render :partial => @member.resumevids, :locals => { :list => true }
   %br
   - if current_member?(@member)
