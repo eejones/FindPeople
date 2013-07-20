@@ -43,6 +43,7 @@ FILTERS = [
   {:scope => "paid",   :label => "Paid-only"}
 ]
 
+  after_validation :geocode
   has_many :resumevids, :dependent => :destroy
 
   private
