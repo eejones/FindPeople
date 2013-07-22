@@ -1,11 +1,10 @@
-%footer.footer
+%footer.footer.center
   %small
-    %a{:href=>"http://en.wikipedia.org/wiki/Timesheet"} Timesheets
-    by Eric E Jones
+    %a{:href=>"http://en.wikipedia.org/wiki/Independent_film"} Independent Film Recruiting
+    by
+    %a{:href=>"http://github.com/eejones"} Eric E Jones
   %nav
     %ul
       %li= link_to "Help", help_path
       %li= link_to "About", about_path
       %li= link_to "Contact", contact_path
-      %li
-        %a{:href=>"http://en.wikipedia.org/wiki/Independent_film"} Independent Films

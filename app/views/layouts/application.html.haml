@@ -7,9 +7,15 @@
     = csrf_meta_tags
   %body
     = render 'layouts/header'
-    %div.container
-      - flash.each do |key, value|
-        %div{:class=>"alert alert-<%= key %>"}
-          = value
-      = yield
+    %nav#primary-navigation.row
+      %div.container.fill
+        %aside.lsidebar.fill
+          %h3 This is the sidebar
+          %p additional content
+        %article.content
+          - flash.each do |key, value|
+            %div{:class=>"alert alert-<%= key %>"}
+              = value
+          = yield
+    .span12
       = render 'layouts/footer'
