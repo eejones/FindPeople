@@ -7,6 +7,7 @@ $white: #FFFFFF;
 $reddish: #CC0000;
 $black: #000000;
 $graylight: #EEEEEE;
+$headblack: #1b1b1b;
 
 @mixin box_sizing {
   -moz-box-sizing: border-box; 
@@ -33,11 +34,12 @@ body {
   h1{
     text-align: left;
     font-weight: bold;
-    padding: 5px 5px 5px 0px;
+    padding: 10px 5px 5px 0px;
     font-size: 32px;
     margin: -7px;
     margin-bottom: 0px;
     color: $black;
+    fill:auto;
   }
   h1 img{
     padding: 5px 5px 5px 0px;
@@ -54,7 +56,6 @@ body {
     font-size: 22px;
     margin: 0px;
     margin-bottom: 0px;
-    background-color: $white;
     color: $black;
     white-space: nowrap;
   }
@@ -65,8 +66,8 @@ body {
     padding: 3px 10px;
     border: 5px;
     border-radius: 20px;
-    margin: 2px 5px;
-    background-color: $graylight;
+    margin: 8px 5px;
+    background-color: $graydark;
     color: $black;
   }
   h3{
@@ -76,7 +77,6 @@ body {
     font-size: 18px;
     margin: 0px;
     margin-bottom: 0px;
-    background-color: $white;
     color: $black;
     white-space: nowrap;
   }
@@ -241,7 +241,6 @@ input {
     font-size: 18px;
     margin: 0px;
     margin-bottom: 0px;
-    background-color: $white;
     color: $black;
     white-space: nowrap;
   }
@@ -263,7 +262,6 @@ input {
     font-size: 18px;
     margin: 0px;
     margin-bottom: 0px;
-    background-color: $white;
     color: $black;
     white-space: nowrap;
   }
@@ -476,32 +474,49 @@ input {
 }
 
 /* leftsidebar */
+
 .lsidebar{
+  font-size: 0px;
+  font-color: $headblack;
   position: fixed;
   top: 60px;
-  width: 10.0%;
+  width: 20px;
   min-height: 100%;
   border-right: 1px solid $graydark;
-  float: left;
   margin-right: 0px;
-  font-size: 1.7em;
-  color: $black;
-  background-color: $graydark;
-  text-transform: uppercase;
-  letter-spacing: -1px;
   margin-top: -25px;
   padding-top: 9px;
   padding-bottom: 9px;
   padding-left: 20px;
-  font-weight: bold;
-  font-size: 15px;
-  line-height: 1;
+  float: left;
+  background-color: $headblack;
   &:hover {
     color: $graydark;
-    background-color: $white;
+    background-color: $graydark;
+    width: 10.0%;
+    font-size: 1.7em;
+    color: $black;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 1;
     text-decoration: none;
-  }
+    padding-bottom:20px;
+    }
 }
+
+.showsidebar{
+  color: $graydark;
+  -moz-transform: rotate(-90deg);  /* FF3.5+ */
+  -o-transform: rotate(-90deg);  /* Opera 10.5 */
+  -webkit-transform: rotate(-90deg);  /* Saf3.1+, Chrome */
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  padding:20px 0px;
+}
+
 .container{
   width:100%;
 }
@@ -604,12 +619,15 @@ p {
 /* footer */
 
 footer {
-  margin-top: 45px;
+  margin-top: 0px;
   padding-top: 5px;
-  border-top: 1px solid #eaeaea;
-  width: 100%;
+  margin-bottom: 5px;
+  border-top: 1px solid $black;
+  width: 70%;
+  padding-right: 15%;
+  padding-left: 15%;
   color: $graydark;
-  float: center;
+  float: left;
   a {
     color: $black;
     &:hover { 
