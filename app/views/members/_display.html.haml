@@ -45,11 +45,12 @@
     Longitude:
     = @member.longitude
     %br
-    %ul
-      -unless @member.nearbys(1000).nil?
-        %br
-        %h3 Other Users Near You:
-        = render @member.nearbys(1000)
+    .listmemberlocations
+      %ul
+        -unless @member.nearbys(1000).nil?
+          %br
+          %h3 Other Users Near You:
+          = render @member.nearbys(1000)
     %br
     %h3 Your Location:
     %br

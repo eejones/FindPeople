@@ -35,16 +35,16 @@
     = m.label "Credits"
     %br
   - if address_there?(@member)
-      %br
-      Address:
-      = @member.address
-      %br
-      Latitude:
-      = @member.latitude
-      %br
-      Longitude:
-      = @member.longitude
-      %br
+    %br
+    Address:
+    = @member.address
+    %br
+    Latitude:
+    = @member.latitude
+    %br
+    Longitude:
+    = @member.longitude
+    %br
     %ul
       -unless @member.nearbys(1000).nil?
         %br

@@ -16,6 +16,17 @@ class MembersController < ApplicationController
         format.json { render json: @members }
       end
     end  
+#      if (params[:filters] && @filters.collect{|f| f[:scope]}.include?(params[:filters]))
+##      if params[:filters]
+#        @members = Member.send(params[:filters]).paginate(:page=> params[:page])
+##        @members = Member.all(:conditions => {params[:label] => params[:filters]}).paginate(:page=> params[:page])
+#      else
+#        @members = Member.paginate(:page=> params[:page])
+#        respond_to do |format|
+#          format.html # index.html.erb
+#          format.js
+#      end
+#    end  
   end
 
   # GET /members/1
@@ -87,7 +98,7 @@ class MembersController < ApplicationController
     end
   end
 
-  private
+private
 
     def signed_in_member
       unless signed_in?
@@ -104,5 +115,4 @@ class MembersController < ApplicationController
     def admin_member
       redirect_to(root_path) unless current_member.admin?
     end
-
 end

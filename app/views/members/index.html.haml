@@ -11,10 +11,19 @@
         %option{:value => pair[:scope]}
           = pair[:label]
     = submit_tag 'Filter'
+What is this
+= form_tag('',:method => :get) do
+  #myfilters
+    - @filters.each do |f|
+      = check_box_tag('filters[]', f[:scope])
+      = f[:label]
+  = submit_tag 'Check Filter'
+
 = will_paginate
-%div.members
-  %ul
+%div#members
+  %ul#myfilters
     = render @members
 = will_paginate
 
 = link_to 'New Member', new_member_path
+= debug(params) if Rails.env.development?

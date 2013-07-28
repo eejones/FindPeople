@@ -18,10 +18,6 @@ $headblack: #1b1b1b;
 
 /* universal */
 
-html{
-  height:100% !important;
-  min-height: 100% !important;
-}
 
 label{
   cursor: auto;
@@ -34,10 +30,8 @@ body {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
-  height: 100% !important;
-  min-height: 100%;
   background-size: contain;
-  overflow-y: hidden ! important;
+  overflow-y: auto ! important;
   overflow-x: hidden ! important;
   /*background-size: cover;*/
   background-size: contain;
@@ -108,12 +102,26 @@ body {
     list-style-type: none;
   }
 }
+
+.showmember{
+  width:550px;
+  margin: 0 auto;
+}
+
+
+.listmemberlocations{
+  ul{
+    margin: 0px;
+    text-align: left;
+  }
+}
+
 .hero-unit{
   min-height:100%;
 }
 
 .members{
-  width:500px;
+  width:550px;
   margin: 0 auto;
   li img{
     padding: 3px 3px 3px 0px;
@@ -185,6 +193,12 @@ div {
   &.field, &.actions {
     margin-bottom: 10px;
   }
+}
+
+.memberlinks{
+  margin-bottom: 7%;
+  margin-top:-15px;
+  padding: 0px;
 }
 
 #addresses{

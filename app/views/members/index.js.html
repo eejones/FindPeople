@@ -1,0 +1,6 @@
+/* Reload the list of users */
+$("#myfilters").html("#{escape_javascript(render @members)}");
+/* add the created video */
+$("#resumevids_test").html("#{escape_javascript(render(:partial=>@member.resumevids))}");
+/* create new blank form */
+$("#newcreated").html("#{escape_javascript(render(:partial=>'resumevids/form'))}")
