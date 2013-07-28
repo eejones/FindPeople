@@ -7,26 +7,28 @@ class MembersController < ApplicationController
 
   def index
     @filters = Member::FILTERS
-    if params[:show] && @filters.collect{|f| f[:scope]}.include?(params[:show])
-      @members = Member.send(params[:show]).paginate(:page=> params[:page])
-    else
-      @members = Member.paginate(:page=> params[:page])
-      respond_to do |format|
-        format.html # index.html.erb
-        format.json { render json: @members }
-      end
-    end  
-#      if (params[:filters] && @filters.collect{|f| f[:scope]}.include?(params[:filters]))
-##      if params[:filters]
-#        @members = Member.send(params[:filters]).paginate(:page=> params[:page])
-##        @members = Member.all(:conditions => {params[:label] => params[:filters]}).paginate(:page=> params[:page])
-#      else
-#        @members = Member.paginate(:page=> params[:page])
-#        respond_to do |format|
-#          format.html # index.html.erb
-#          format.js
+#    if params[:show] && @filters.collect{|f| f[:scope]}.include?(params[:show])
+#      @members = Member.send(params[:show]).paginate(:page=> params[:page])
+#    else
+#      @members = Member.paginate(:page=> params[:page])
+#      respond_to do |format|
+#        format.html # index.html.erb
+#        format.json { render json: @members }
 #      end
 #    end  
+#      if (params[:filters] && @filters.collect{|f| f[:scope]}.include?(params[:filters]))
+#      if (params[:filters] && ((params[:filters])-(@filters.collect{|f| f[:scope]}))==0)
+      if :filters
+#       if @filters.collect{|f| f[:scope]}.include?(:filters)
+#        @members = Member.send(params[:filters]).paginate(:page=> params[:page])
+       @members = Member.send(params[:filters]).paginate(:page=> params[:page])
+      else
+        @members = Member.paginate(:page=> params[:page])
+        respond_to do |format|
+          format.html # index.html.erb
+          format.js
+      end
+    end  
   end
 
   # GET /members/1

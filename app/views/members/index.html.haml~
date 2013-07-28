@@ -11,14 +11,16 @@
         %option{:value => pair[:scope]}
           = pair[:label]
     = submit_tag 'Filter'
-What is this
 = form_tag('',:method => :get) do
   #myfilters
     - @filters.each do |f|
-      = check_box_tag('show[]', f[:scope])
+      = check_box_tag('filters[]', f[:scope])
       = f[:label]
   = submit_tag 'Check Filter'
 
+%br
+-if @@filtervar.exist?
+  =@@filtervar
 = will_paginate
 %div#members
   %ul#myfilters

@@ -14,6 +14,7 @@ class Member < ActiveRecord::Base
   validates :password, :presence=> true, :length=> { :minimum=> 6 }
   validates :password_confirmation, :presence=> true
 
+  scope :all
   scope :actors,      :conditions => { :act => true }
   scope :producers,    :conditions => { :produce => true }
   scope :directors,     :conditions => { :direct => true }

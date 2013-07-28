@@ -11,7 +11,6 @@
         %option{:value => pair[:scope]}
           = pair[:label]
     = submit_tag 'Filter'
-What is this
 = form_tag('',:method => :get) do
   #myfilters
     - @filters.each do |f|

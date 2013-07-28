@@ -16,10 +16,12 @@ class MembersController < ApplicationController
 #        format.json { render json: @members }
 #      end
 #    end  
-      if (params[:filters] && @filters.collect{|f| f[:scope]}.include?(params[:filters]))
-#      if params[:filters]
-        @members = Member.send(params[:filters]).paginate(:page=> params[:page])
-#        @members = Member.all(:conditions => {params[:label] => params[:filters]}).paginate(:page=> params[:page])
+#      if (params[:filters] && @filters.collect{|f| f[:scope]}.include?(params[:filters]))
+#      if (params[:filters] && ((params[:filters])-(@filters.collect{|f| f[:scope]}))==0)
+      if :filters
+#       if @filters.collect{|f| f[:scope]}.include?(:filters)
+#        @members = Member.send(params[:filters]).paginate(:page=> params[:page])
+       @members = Member.send(params[:filters].inspect.to_sym).paginate(:page=> params[:page])
       else
         @members = Member.paginate(:page=> params[:page])
         respond_to do |format|
