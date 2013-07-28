@@ -4,16 +4,14 @@
 
 = form_tag('', :method => :get) do
   %div.filtertime
-    %label{:for => "show"} Search:
+    %label{:for => "show"}
     %br/
     %select#show{:name => "show", :onchange => "window.location='\#{url_for(eval('#{'member'}_url({ :query => params[:query] })'))}' + '?show=' + this.value"}
       - @filters.each do |pair|
         %option{:value => pair[:scope]}
           = pair[:label]
     = submit_tag 'Filter'
-
 = will_paginate
-
 %ul.members
   = render @members
 = will_paginate

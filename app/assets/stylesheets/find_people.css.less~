@@ -1,5 +1,5 @@
 @import 'twitter/bootstrap';
 body {
-  min-height:100%;
+  min-height:80%;
   padding-top: 60px;
 }

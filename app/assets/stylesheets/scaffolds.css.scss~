@@ -9,6 +9,7 @@ $black: #000000;
 $graylight: #EEEEEE;
 $headblack: #1b1b1b;
 
+
 @mixin box_sizing {
   -moz-box-sizing: border-box; 
   -webkit-box-sizing: border-box; 
@@ -17,19 +18,33 @@ $headblack: #1b1b1b;
 
 /* universal */
 
+html{
+  height:100% !important;
+  min-height: 100% !important;
+}
+
 label{
   cursor: auto;
 }
 
 body {
   padding-top: 60px;
-  background-color: #fff;
+  background-color: $graylight;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
-  height: 100%;
+  height: 100% !important;
+  min-height: 100%;
+  background-size: contain;
+  overflow-y: hidden ! important;
+  overflow-x: hidden ! important;
+  /*background-size: cover;*/
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
 }
+
 .betterheading{
   h1{
     text-align: left;
@@ -93,8 +108,13 @@ body {
     list-style-type: none;
   }
 }
+.hero-unit{
+  min-height:100%;
+}
 
 .members{
+  width:500px;
+  margin: 0 auto;
   li img{
     padding: 3px 3px 3px 0px;
     margin-top: 5px;
@@ -103,6 +123,9 @@ body {
     margin-right: 2px;
     width: 35px;
     height: 35px;
+  }
+  li{
+    text-align:left;
   }
 }
 .showmembers {
@@ -296,16 +319,19 @@ input {
     transition-duration: 5s;
     transition-timing-function: linear;
     transition-delay: 2s;
-  } 
-  h1{
+    vertical-align:center;
+  }
+  p{
     text-align: center;
     padding: 5px 5px 5px 15px;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 15px;
     margin: -7px;
-    margin-bottom: 0px;
+    margin-top: 5px;
+    margin-bottom: 3px;
     background-color: $graylight;
     color: $black;
+    min-height: 100%;
   }
   input, textarea, select, .uneditable-input {
     border: 1px solid $graylight;
@@ -339,13 +365,21 @@ input {
   }
 
 }
-.about{
-  div{
-    transition-property: width;
-    transition-duration: 5s;
-    transition-timing-function: linear;
-    transition-delay: 2s;
-  } 
+.content .about{
+  vertical-align:center;
+  box-align:center;
+  p{
+    text-align: center;
+    padding: 5px 5px 5px 15px;
+    font-weight: bold;
+    font-size: 15px;
+    margin: -7px;
+    margin-top: 5px;
+    margin-bottom: 3px;
+    background-color: $graylight;
+    color: $black;
+    min-height: 100%;
+  }
   h1{
     text-align: center;
     padding: 5px 5px 5px 15px;
@@ -370,7 +404,6 @@ input {
     padding: 5px;
     margin-left: 10px;
     margin-bottom: 10px;
-    @include box_sizing;
     color: $graydark;
   }
   h2{
@@ -529,6 +562,7 @@ input {
 }
 .container{
   width:100%;
+  height:100%;
 }
 
 /* main content*/
@@ -536,6 +570,7 @@ input {
   position: fluid;
   top: 60px;
   width: 70.0%;
+  background-size: contain;
   min-height: 100%;
   border-right: 1px solid $graydark;
   float: center;
@@ -547,6 +582,7 @@ input {
   padding-left: 15%;
   padding-right: 15%;
   line-height: 1;
+  text-align: 45%;
 }
 
 /* typography */
@@ -615,33 +651,54 @@ p {
   }
 }
 .filtertime{
-  input, textarea, select, option, .uneditable-input {
+  text-align:center;
+  margin: 0 auto;
+  input, textarea, select, .uneditable-input {
     font-size: 1.2em;   
     height: auto !important;
     width: auto;
     @include box_sizing;
     margin-bottom: -10px;
   }
+  option{
+    font-size: 1.2em;   
+    height: auto !important;
+    width: auto;
+    @include box_sizing;
+  }
   label{
     padding: 0px 0px 0px 0px;
     margin: -15px -5px -15px 0px;
   }
 }
+
+.pagination{
+  text-align: center;
+  margin: 0 auto;
+}
 /* footer */
 
 footer {
-  margin-top: 0px;
+  height:6%;
+  position: fixed;
+  bottom: 0;
+  margin-top: -3px;
   padding-top: 5px;
+  margin-bottom: -8px;
   border-top: 1px solid $black;
   width: 70%;
   padding-right: 15%;
   padding-left: 15%;
   color: $graydark;
   float: left;
+  background-color: $headblack;
   a {
     color: $black;
     &:hover { 
     color: $white;
+    background-color: transparent;
+    font-weight: normal;
+    text-decoration:none;
     }
   }
   small {
@@ -659,3 +716,9 @@ footer {
   }
 }
 
+/* Overall Application structure */
+.appbody{
+  body{
+    min-height: 1000px;
+  }
+}

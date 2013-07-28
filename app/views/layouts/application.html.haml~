@@ -9,11 +9,7 @@
     = render 'layouts/header'
     %nav#primary-navigation.row
       %div.container.fill
-        %aside.lsidebar.fill
-          %p This is the sidebar
-          %p additional content
-          .showsidebar
-            Expand
+        = render 'layouts/lsidebar'
         %article.content
           - flash.each do |key, value|
             %div{:class=>"alert alert-<%= key %>"}
