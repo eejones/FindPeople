@@ -1,7 +1,7 @@
 - provide(:title, "All Members")
 
 %h1 Active Members
-- now = Time.now
+
 = form_tag('', :method => :get) do
   %div.filtertime
     %label{:for => "show"} Search:
@@ -19,4 +19,3 @@
 = will_paginate
 
 = link_to 'New Member', new_member_path
-= now

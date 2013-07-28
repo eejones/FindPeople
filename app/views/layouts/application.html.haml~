@@ -13,7 +13,7 @@
           %p This is the sidebar
           %p additional content
           .showsidebar
-            "<Expand>"
+            Expand
         %article.content
           - flash.each do |key, value|
             %div{:class=>"alert alert-<%= key %>"}

@@ -1,0 +1,5 @@
+%aside.lsidebar.fill
+  - if signed_in?
+    = link_to(@current_member.username, current_member, {:id=> "logo"})
+  %p Expand
+
