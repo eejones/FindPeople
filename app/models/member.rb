@@ -15,18 +15,18 @@ class Member < ActiveRecord::Base
   validates :password_confirmation, :presence=> true
 
   scope :all
-  scope :actors,      :conditions => { :act => true }
-  scope :producers,    :conditions => { :produce => true }
-  scope :directors,     :conditions => { :direct => true }
-  scope :extras,   :conditions => { :extra => true }
-  scope :pas,  :conditions => { :pa => true }
-  scope :writers,   :conditions => { :write => true }
-  scope :sound,   :conditions => {:sound=>true}
-  scope :wardrobe,  :conditions => {:wardrobe=>true}
-  scope :setdesign,   :conditions => {:setdesign=>true}
-  scope :stunt,   :conditions => {:stunt=>true}
-  scope :marketing,  :conditions => {:marketing=>true}
-  scope :paid,   :conditions => {:paid=>true}
+  scope :actors,      -> { where( :act => true )}
+  scope :producers,    -> { where( :produce => true )}
+  scope :directors,     -> { where( :direct => true )}
+  scope :extras,   -> { where( :extra => true )}
+  scope :pas,  -> { where( :pa => true )}
+  scope :writers,   -> { where( :write => true )}
+  scope :sound,   -> { where(:sound=>true)}
+  scope :wardrobe,  -> { where(:wardrobe=>true)}
+  scope :setdesign,   -> { where(:setdesign=>true)}
+  scope :stunt,   -> { where(:stunt=>true)}
+  scope :marketing,  -> { where(:marketing=>true)}
+  scope :paid,   -> { where(:paid=>true)}
 
 FILTERS = [
   {:scope => "all",         :label => "All"},

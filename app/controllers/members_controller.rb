@@ -5,6 +5,20 @@ class MembersController < ApplicationController
   before_filter :signed_in_member, :only=> [:index, :edit, :update]
   before_filter :admin_member, :only=> :destroy
 
+  has_scope :all
+  has_scope :actors
+  has_scope :producers
+  has_scope :directors
+  has_scope :extras
+  has_scope :pas
+  has_scope :writers
+  has_scope :sound
+  has_scope :wardrobe
+  has_scope :setdesign
+  has_scope :stunt
+  has_scope :marketing
+  has_scope :paid
+
   def index
     @filters = Member::FILTERS
 #    if params[:show] && @filters.collect{|f| f[:scope]}.include?(params[:show])
@@ -15,13 +29,22 @@ class MembersController < ApplicationController
 #        format.html # index.html.erb
 #        format.json { render json: @members }
 #      end
-#    end  
-#      if (params[:filters] && @filters.collect{|f| f[:scope]}.include?(params[:filters]))
+#    end
+      if (params[:myfilters] && (params[:myfilters]-(@filters.collect{|f| f[:scope]})).empty?)
+#      if (params[:myfilters] && @filters.collect{|f| f[:scope]}.include?(params[:myfilters]))
 #      if (params[:filters] && ((params[:filters])-(@filters.collect{|f| f[:scope]}))==0)
-      if :filters
-#       if @filters.collect{|f| f[:scope]}.include?(:filters)
-#        @members = Member.send(params[:filters]).paginate(:page=> params[:page])
-       @members = Member.send(params[:filters]).paginate(:page=> params[:page])
+#      if :filters
+#       if @filters.collect{|f| f[:scope]}.include?(params[:myfilters])
+        @members = Member.myfilters.paginate(:page=> params[:page])
+#        @members = apply_scopes(Member).paginate(:page=> params[:page])
+#  @members = Members.scoped
+#  @members = @members.actors(params[:actors]) unless params[:actors].blank?
+#  @results = @results.career(params[:career]) unless params[:career].blank?
+end
+
+#        @members = Member.myfilters(params[:myfilters]).paginate(:page=> params[:page]) 
+#where(params[:myfilters].collect{|f| f}).paginate(:page=> params[:page])
+#       @members = Member.send(params[:show]).paginate(:page=> params[:page])
       else
         @members = Member.paginate(:page=> params[:page])
         respond_to do |format|
@@ -97,6 +120,19 @@ class MembersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to members_url }
       format.json { head :no_content }
+    end
+  end
+
+
+  def myfilters
+    params[:myfilters].each do |b|
+     @member = Member.where(params[:myfilters].collect{|f|f==true})
+#     @member = Member.where((params[:myfilters]-params[FILTERS]).empty?)
+#    @member = Member.where(params[:myfilters])
+#params[:myfilters]-(@filters.collect{|f| f[:scope]}))
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @member }
     end
   end
 

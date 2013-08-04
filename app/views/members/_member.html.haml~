@@ -1,17 +1,20 @@
-%div
-  %li
-    = image_tag member.avatar.url(:thumb)
-    = link_to member.username, member
-    - if address_there?(member)
+%li
+  = image_tag member.avatar.url(:thumb)
+  = link_to member.username, member
+  = params[:myfilters]
+  = @filters.collect{|s| s[:scope]}
+  = actors
+  = debug(params) if Rails.env.development?
+  - if address_there?(member)
+    |
+    %span#addresses.myaddress
+      #{link_to member.address, member}
       |
-      %span#addresses.myaddress
-        #{link_to member.address, member}
-        |
-        %span
-          - if signed_in?
-            = member.distance_to(@current_member).round(2)
-            miles away
-            |
-    = link_to 'Edit', edit_member_path(member)
-    - if current_member.admin? && !current_member?(member)
-      | #{link_to "delete", member, method: :delete, data: { confirm: "You sure?" }}
+      %span
+        - if signed_in?
+          = member.distance_to(@current_member).round(2)
+          miles away
+          |
+  = link_to 'Edit', edit_member_path(member)
+  - if current_member.admin? && !current_member?(member)
+    | #{link_to "delete", member, method: :delete, data: { confirm: "You sure?" }}

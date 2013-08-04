@@ -14,7 +14,7 @@
 = form_tag('',:method => :get) do
   #myfilters
     - @filters.each do |f|
-      = check_box_tag('filters[]', f[:scope])
+      = check_box_tag('myfilters[]', f[:scope])
       = f[:label]
   = submit_tag 'Check Filter'
 
@@ -24,5 +24,12 @@
     = render @members
 = will_paginate
 
+= p params[:myfilters]
+%br
+-#= p @filters.collect{|f| f[:scope]}.include?(params[:myfilters])
+-#= p (params[:myfilters]-(@filters.collect{|f| f[:scope]})).empty?
+%br
+-#= @filters.collect{|f| f[:scope]}
+%br
 = link_to 'New Member', new_member_path
 = debug(params) if Rails.env.development?

@@ -37,6 +37,7 @@ group :development do
   gem 'annotate', '2.5.0'
   gem 'hpricot'
   gem 'ruby_parser'
+  gem 'brakeman'
 end
 
 gem 'jquery-rails'
