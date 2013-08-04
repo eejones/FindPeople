@@ -665,6 +665,8 @@ p {
   }
 }
 .filtertime{
+  display: inline-block;
+  width: 100%;
   text-align:center;
   margin: 0 auto;
   padding: 0px 0px 0px 0px;
@@ -675,6 +677,7 @@ p {
     width: auto;
     @include box_sizing;
     margin-bottom: 0px;
+    margin-top:-3px;
   }
   option{
     font-size: .8em;   
@@ -685,13 +688,16 @@ p {
 }
 
 .filterbutton{
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top:10px;
   input {
-    font-size: .8em;   
+    font-size: 1.0em;   
     height: auto !important;
     width: auto;
     @include box_sizing;
     margin-bottom: 0px;
-    align: center;
   }
 }
 
