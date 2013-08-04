@@ -1,9 +1,6 @@
 %li
   = image_tag member.avatar.url(:thumb)
   = link_to member.username, member
-  = params[:myfilters]
-  = @filters.collect{|s| s[:scope]}
-  = debug(params) if Rails.env.development?
   - if address_there?(member)
     |
     %span#addresses.myaddress

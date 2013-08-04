@@ -120,7 +120,7 @@ body {
   min-height:100%;
 }
 
-.members{
+#members{
   width:550px;
   margin: 0 auto;
   li img{
@@ -667,23 +667,30 @@ p {
 .filtertime{
   text-align:center;
   margin: 0 auto;
+  padding: 0px 0px 0px 0px;
+  font-size: .8em;   
   input, textarea, select, .uneditable-input {
-    font-size: 1.2em;   
+    font-size: .8em;   
     height: auto !important;
     width: auto;
     @include box_sizing;
-    margin-bottom: -10px;
+    margin-bottom: 0px;
   }
   option{
-    font-size: 1.2em;   
+    font-size: .8em;   
     height: auto !important;
     width: auto;
     @include box_sizing;
   }
-  label{
-    padding: 0px 0px 0px 0px;
-    margin: -15px -5px -15px 0px;
-  }
+}
+
+.filterbutton{
+    font-size: .8em;   
+    height: auto !important;
+    width: auto;
+    @include box_sizing;
+    margin-bottom: 0px;
+    box-align: center;
 }
 
 .pagination{

@@ -14,7 +14,6 @@ class Member < ActiveRecord::Base
   validates :password, :presence=> true, :length=> { :minimum=> 6 }
   validates :password_confirmation, :presence=> true
 
-  scope :all
   scope :actors,      -> { where( :act => true )}
   scope :producers,    -> { where( :produce => true )}
   scope :directors,     -> { where( :direct => true )}
@@ -29,13 +28,12 @@ class Member < ActiveRecord::Base
   scope :paid,   -> { where(:paid=>true)}
 
 FILTERS = [
-  {:scope => "all",         :label => "All"},
-  {:scope => "actors",      :label => "Actors"},
-  {:scope => "producers",    :label => "Producers"},
-  {:scope => "directors",     :label => "Directors"},
-  {:scope => "extras",   :label => "Extras"},
-  {:scope => "pas",  :label => "PAs"},
-  {:scope => "writers",   :label => "Writers"},
+  {:scope => "act",      :label => "Actors"},
+  {:scope => "produce",    :label => "Producers"},
+  {:scope => "direct",     :label => "Directors"},
+  {:scope => "extra",   :label => "Extras"},
+  {:scope => "pa",  :label => "PAs"},
+  {:scope => "write",   :label => "Writers"},
   {:scope => "sound",   :label => "Sound Engineers"},
   {:scope => "wardrobe",  :label => "Wardrobe"},
   {:scope => "setdesign",   :label => "Set Design"},

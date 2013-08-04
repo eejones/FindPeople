@@ -2,21 +2,14 @@
 
 %h1 Active Members
 
-= form_tag('', :method => :get) do
-  %div.filtertime
-    %label{:for => "show"}
-    %br/
-    %select#show{:name => "show", :onchange => "window.location='\#{url_for(eval('#{'member'}_url({ :query => params[:query] })'))}' + '?show=' + this.value"}
-      - @filters.each do |pair|
-        %option{:value => pair[:scope]}
-          = pair[:label]
-    = submit_tag 'Filter'
 = form_tag('',:method => :get) do
-  #myfilters
+  %span#myfilters.filtertime
     - @filters.each do |f|
-      = check_box_tag('myfilters[]', f[:scope])
+      = check_box_tag('show[]', f[:scope])
       = f[:label]
-  = submit_tag 'Check Filter'
+  %br
+  .filterbutton
+    = submit_tag 'Check Filter'
 
 = will_paginate
 %div#members
@@ -24,13 +17,12 @@
     = render @members
 = will_paginate
 
-= p params[:myfilters]
+= p params[:show]
 %br
 -#= p @filters.collect{|f| f[:scope]}.include?(params[:myfilters])
 -#= p (params[:myfilters]-(@filters.collect{|f| f[:scope]})).empty?
 %br
 -#= @filters.collect{|f| f[:scope]}
 %br
-= @members.current_scopes
 = link_to 'New Member', new_member_path
 = debug(params) if Rails.env.development?
