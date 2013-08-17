@@ -49,7 +49,7 @@ Users can also show their location and find local people with similar interests 
 Users can find out how far other users are when searching by hovering over their locations:
 ![FindPeople hoverfordistance](/app/assets/images/hoverfordistance.png)
 
-Additional Setup
+Additional Setup 
 ------------
 To add videos , functionality from the embed_logic gem is used to easily convert normal urls to to their embedding code:
 
