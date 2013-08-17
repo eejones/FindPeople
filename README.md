@@ -30,16 +30,24 @@ Signed out:
 
 User Interface for Film Producers
 ------------
-Members can be found through filtering for specific criteria
+Members can be found through filtering for specific criteria. Multiple filters can be applied at once.
 
 Before filtering:
-![FindPeople memberall](/app/assets/images/memberall.png)
+![FindPeople indexbeforefilter](/app/assets/images/indexbeforefilter.png)
 
 After filtering:
-![FindPeople memberfiltered](/app/assets/images/memberfiltered.png)
+![FindPeople indexafterfilter](/app/assets/images/indexafterfilter.png)
 
 Users will also notice that there are default avatars if users haven't added them.
 
+There is also a sidebar that can be configured and will expand/contract from hovering:
+![FindPeople expandsidebar](/app/assets/images/expandsidebar.png)
+
+Users can also show their location and find local people with similar interests in their area, sorting by the other members' distance from the user:
+![FindPeople mapsandlocations](/app/assets/images/mapsandlocations.png)
+
+Users can find out how far other users are when searching by hovering over their locations:
+![FindPeople hoverfordistance](/app/assets/images/hoverfordistance.png)
 
 Additional Setup
 ------------

@@ -11,32 +11,32 @@ User Interface for Members
 ------------
 
 To add pictures, interests and videos, users will see a straightforward screen when creating a new profile:
-![FindPeople signupform](https://github.com/eejones/FindPeople/blob/master/app/assets/images/signupform.png)
+![FindPeople signupform](/app/assets/images/signupform.png)
 
 Users can also add and edit after creating their profile.
 Before adding a video:
-![FindPeople prevideoentry](https://github.com/eejones/FindPeople/blob/master/app/assets/images/prevideoentry.png)
+![FindPeople prevideoentry](/app/assets/images/prevideoentry.png)
 
 After adding a video:
-![FindPeople postvideoentry](https://github.com/eejones/FindPeople/blob/master/app/assets/images/postvideoentry.png)
+![FindPeople postvideoentry](/app/assets/images/postvideoentry.png)
 
 Views also change depending upon whether a user is signed in:
 
 Signed in:
-![FindPeople signedindropdown](https://github.com/eejones/FindPeople/blob/master/app/assets/images/signedindropdown.png)
+![FindPeople signedindropdown](/app/assets/images/signedindropdown.png)
 
 Signed out:
-![FindPeople Notsignedin](https://github.com/eejones/FindPeople/blob/master/app/assets/images/Notsignedin.png)
+![FindPeople Notsignedin](/app/assets/images/Notsignedin.png)
 
 User Interface for Film Producers
 ------------
 Members can be found through filtering for specific criteria
 
 Before filtering:
-![FindPeople memberall](https://github.com/eejones/FindPeople/blob/master/app/assets/images/memberall.png)
+![FindPeople memberall](/app/assets/images/memberall.png)
 
 After filtering:
-![FindPeople memberfiltered](https://github.com/eejones/FindPeople/blob/master/app/assets/images/memberfiltered.png)
+![FindPeople memberfiltered](/app/assets/images/memberfiltered.png)
 
 Users will also notice that there are default avatars if users haven't added them.
 
@@ -52,4 +52,4 @@ gem "embed_logic"
 ```
 
 This allows users to easily embed videos:
-![FindPeople withvideo](https://github.com/eejones/FindPeople/blob/master/app/assets/images/withvideo.png)
+![FindPeople withvideo](/app/assets/images/withvideo.png)
