@@ -8,6 +8,7 @@
     = m.password_field :password
     = m.label "Password Confirmation"
     = m.password_field :password_confirmation
+    = m.label "Theme"
     = m.select :mytheme, [['Classic','Classic'], ['Dark','Dark'], ['Light','Light'], ['Blue','Blue'], ['Yellow','Yellow'], ['Red','Red']]
     = m.label :address
     = m.text_field :address

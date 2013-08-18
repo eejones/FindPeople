@@ -2,7 +2,25 @@
 %html
   %head
     %title FindPeople
-    = stylesheet_link_tag "application", :media => "all"
+
+    - if signed_in?
+      - if has_theme?(@current_member)
+        - if @current_member.mytheme=='Classic'
+          = stylesheet_link_tag "application", :media => "all"
+        - elsif @current_member.mytheme=='Blue'
+          = stylesheet_link_tag "application", :media => "all"
+        - elsif @current_member.mytheme=='Blue'
+          = stylesheet_link_tag "application", :media => "all"
+        - elsif @current_member.mytheme=='Blue'
+          = stylesheet_link_tag "application", :media => "all"
+        - elsif @current_member.mytheme=='Blue'
+          = stylesheet_link_tag "application", :media => "all"
+        - else
+          = stylesheet_link_tag "application", :media => "all"
+      - else
+        = stylesheet_link_tag "application", :media => "all"
+    - else
+      = stylesheet_link_tag "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body

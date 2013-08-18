@@ -6,6 +6,6 @@ module MembersHelper
   end
 
   def attribute_there?(attribute)
-    member.attribute==true
+    attribute==true
   end
 end
