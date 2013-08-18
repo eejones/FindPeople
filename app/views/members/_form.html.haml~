@@ -8,6 +8,7 @@
     = m.password_field :password
     = m.label "Password Confirmation"
     = m.password_field :password_confirmation
+    = m.select :mytheme, [['Classic','Classic'], ['Dark','Dark'], ['Light','Light'], ['Blue','Blue'], ['Yellow','Yellow'], ['Red','Red']]
     = m.label :address
     = m.text_field :address
     = m.label "Avatar"
@@ -49,8 +50,6 @@
       = m.number_field :salary
       = m.label "Selected Credits"
       = m.text_area :credits
-      = m.label "Admin"
-      = m.check_box :admin
       = m.label :profilevid
       = m.text_field :profilevid
 

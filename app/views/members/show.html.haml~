@@ -14,12 +14,15 @@
     %tr
       %th Username:
       %th Email:
+      %th Theme:
     %COLGROUP
       %COL{:width=>"200"}
       %COL{:width=>"300"}
+      %COL{:width=>"120"}
     %tr
       %td= @member.username
       %td= @member.email
+      %td= @member.theme
   %div.form-inline
     %br
     %div.betterheading
@@ -41,5 +44,6 @@
       %h3 Add a video to your body of work
       %div#newcreated
         = render "resumevids/form"
-  = link_to 'Edit', edit_member_path(@member)
-  = link_to 'Back', members_path
+  .memberlinks
+    = link_to 'Edit', edit_member_path(@member)
+    = link_to 'Back', members_path
