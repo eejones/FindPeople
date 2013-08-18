@@ -18,9 +18,7 @@ $grayborder: #4A4A43;
 
 /* universal */
 
-.navbar-inner {
-    color:$grayborder;
-}
+
 label{
   cursor: auto;
 }
