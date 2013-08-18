@@ -6,21 +6,19 @@
     - if signed_in?
       - if has_theme?(@current_member)
         - if @current_member.mytheme=='Classic'
-          = stylesheet_link_tag "application", :media => "all"
+          = stylesheet_link_tag "scaffolds", :media => "all"
         - elsif @current_member.mytheme=='Blue'
-          = stylesheet_link_tag "application", :media => "all"
-        - elsif @current_member.mytheme=='Blue'
-          = stylesheet_link_tag "application", :media => "all"
-        - elsif @current_member.mytheme=='Blue'
-          = stylesheet_link_tag "application", :media => "all"
-        - elsif @current_member.mytheme=='Blue'
-          = stylesheet_link_tag "application", :media => "all"
+          = stylesheet_link_tag "bluestyle", :media => "all"
+        - elsif @current_member.mytheme=='Yellow'
+          = stylesheet_link_tag "yellowstyle", :media => "all"
+        - elsif @current_member.mytheme=='Red'
+          = stylesheet_link_tag "redstyle", :media => "all"
         - else
-          = stylesheet_link_tag "application", :media => "all"
+          = stylesheet_link_tag "scaffolds", :media => "all"
       - else
-        = stylesheet_link_tag "application", :media => "all"
+        = stylesheet_link_tag "scaffolds", :media => "all"
     - else
-      = stylesheet_link_tag "application", :media => "all"
+      = stylesheet_link_tag "scaffolds", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body

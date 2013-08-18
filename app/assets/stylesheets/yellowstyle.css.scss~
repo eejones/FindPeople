@@ -7,7 +7,7 @@ $white: #FFFFFF;
 $reddish: #CC0000;
 $graydark: #1b1b1b;
 $yellowlight: #F1F77C;
-$grayborder: #999999;
+$grayborder: #4A4A43;
 
 
 @mixin box_sizing {
@@ -18,7 +18,9 @@ $grayborder: #999999;
 
 /* universal */
 
-
+.navbar-inner {
+    color:$grayborder;
+}
 label{
   cursor: auto;
 }
