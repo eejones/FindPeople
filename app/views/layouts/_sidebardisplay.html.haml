@@ -1,0 +1,37 @@
+= form_for (@current_member) do |m|
+  - if attribute_there?(@current_member.act)
+    = m.label "Act"
+  - if attribute_there?(@current_member.produce)
+    = m.label "Produce"
+  - if attribute_there?(@current_member.direct)
+    = m.label "Direct"
+  - if attribute_there?(@current_member.camera)
+    = m.label "Camera"
+  - if attribute_there?(@current_member.extra)
+    = m.label "Extra"
+  - if attribute_there?(@current_member.pa)
+    = m.label "Pa:"
+  - if attribute_there?(@current_member.write)
+    = m.label "Write:"
+  - if attribute_there?(@current_member.sound)
+    = m.label "Sound"
+  - if attribute_there?(@current_member.wardrobe)
+    = m.label "Wardrobe"
+  - if attribute_there?(@current_member.setdesign)
+    = m.label "Setdesign"
+  - if attribute_there?(@current_member.stunt)
+    = m.label "Stunt"
+  - if attribute_there?(@current_member.marketing)
+    = m.label "Marketing"
+  - if attribute_there?(@current_member.other)
+    = m.label "Other"
+  - if attribute_there?(@current_member.what)
+    = m.label "What"
+  - if attribute_there?(@current_member.paid)
+    = m.label "Paid"
+  - if attribute_there?(@current_member.salary)
+    = m.label "Salary"
+  - if attribute_there?(@current_member.credits)
+    = m.label "Credits"
+    %br
+  = link_to 'Edit Profile', edit_member_path(@current_member)
