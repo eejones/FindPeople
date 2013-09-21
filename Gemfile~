@@ -14,7 +14,6 @@ gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
 gem 'haml'
 gem 'haml-rails'
-gem 'sqlite3'
 gem 'paperclip', '~> 2.7'
 gem 'cocaine', '0.4.0'
 gem 'json'
@@ -39,6 +38,11 @@ group :development do
   gem 'hpricot'
   gem 'ruby_parser'
   gem 'brakeman'
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
 end
 
 gem 'jquery-rails'
