@@ -8,13 +8,13 @@
     = m.password_field :password
     = m.label "Password Confirmation"
     = m.password_field :password_confirmation
-    = m.label "Theme"
-    = m.select :mytheme, [['Classic','Classic'], ['Black','Black'], ['Blue','Blue'], ['Yellow','Yellow'], ['Red','Red']]
-    = m.label :address
-    = m.text_field :address
-    = m.label "Avatar"
-    = image_tag @member.avatar.url(:thumb)
-    = m.file_field :avatar
+    -# = m.label "Theme"
+    -# = m.select :mytheme, [['Classic','Classic'], ['Blue','Blue'], ['Yellow','Yellow'], ['Red','Red']]
+    -# = m.label :address
+    -# = m.text_field :address
+    -# = m.label "Avatar"
+    -# = image_tag @member.avatar.url(:thumb)
+    -# = m.file_field :avatar
     %div#specialbutton.highlights
       %h1 Interests
       = m.label "Actor"

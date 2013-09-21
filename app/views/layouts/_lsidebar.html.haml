@@ -1,8 +1,8 @@
 %aside.lsidebar.fill
   - if signed_in?
     = link_to(@current_member.username, current_member, {:id=> "logo"})
-  %ul
-    Interests:
-    = render 'layouts/sidebardisplay'
+    %ul
+      Interests:
+      = render 'layouts/sidebardisplay'
   %p Expand
 
