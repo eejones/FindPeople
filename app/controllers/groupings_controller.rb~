@@ -1,0 +1,15 @@
+class GroupingsController < ApplicationController
+#  before_action :signed_in_member
+
+  def create
+    @group = Group.find(params[:grouping][:group_id])
+    current_member.join!(@group)
+    redirect_to @current_member
+  end
+
+  def destroy
+    @member = Grouping.find(params[:id]).member_id
+    current_member.unjoin!(@group)
+    redirect_to @current_member
+  end
+end

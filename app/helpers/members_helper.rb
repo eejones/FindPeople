@@ -1,6 +1,5 @@
 module MembersHelper
 
-
   def address_there?(member)
     !member.address.nil?
   end
@@ -12,4 +11,9 @@ module MembersHelper
   def attribute_there?(attribute)
     attribute==true
   end
+  
+  def ingroups?(member)
+    !member.groupings.nil?
+  end
+
 end

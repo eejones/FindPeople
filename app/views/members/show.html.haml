@@ -23,6 +23,10 @@
       %td= @member.username
       %td= @member.email
       %td= @member.mytheme
+  - if ingroups?(@member)
+    Groups:
+    - @member.groupings.each do |grouping|
+      = group.id
   %div.form-inline
     %br
     %div.betterheading

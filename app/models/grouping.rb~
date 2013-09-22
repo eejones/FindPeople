@@ -1,0 +1,5 @@
+class Grouping < ActiveRecord::Base
+  attr_accessible :group_id, :user_id
+  belongs_to :member  
+  belongs_to :group
+end

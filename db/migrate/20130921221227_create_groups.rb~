@@ -1,0 +1,12 @@
+class CreateGroups < ActiveRecord::Migration
+  def change
+    create_table :groups do |t|
+      t.string :name
+      t.text :description
+      t.references :member
+      t.references :resumevid
+    end
+    add_index :groups, :member_id
+    add_index :groups, :resumevid_id
+  end
+end

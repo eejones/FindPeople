@@ -1,0 +1,7 @@
+- provide(:title, @group.name)
+%div{:class=>"row"}
+  %section
+    = @group.name
+    |
+    = @group.description
+    = link_to 'Edit group', edit_group_path(@group)

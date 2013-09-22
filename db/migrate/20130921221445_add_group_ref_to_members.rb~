@@ -1,0 +1,5 @@
+class AddGroupRefToMembers < ActiveRecord::Migration
+  def change
+    add_column :members, :group, :references
+  end
+end

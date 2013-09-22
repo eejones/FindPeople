@@ -1,9 +1,14 @@
 FindPeople::Application.routes.draw do
+
+  get "groups/new"
+
   resources :members do
     resources :resumevids
   end
 
   resources :sessions, only: [:new, :create, :destroy]
+  resources :groups
+  resources :groupings, only: [:new, :create, :destroy]
 
   match '/signup',  :to=> 'members#new'
   match '/signin',  :to=> 'sessions#new'
@@ -11,8 +16,10 @@ FindPeople::Application.routes.draw do
   match '/help',    :to=> 'home#help'
   match '/about',   :to=> 'home#about'
   match '/contact', :to=> 'home#contact'
+  match '/newgroup', :to=> 'groups#new'
 
   get "home/index"
+
 
 
   # The priority is based upon order of creation:

@@ -1,0 +1,2 @@
+=form_for(current_member.groupings.find_by(group_id: @group),html: { method: :delete}) do |m|
+  = m.submit "Leave Group", class: "btn btn-large btn-primary"

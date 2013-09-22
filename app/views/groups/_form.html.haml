@@ -1,0 +1,8 @@
+%div.awesome
+  = form_for (@group) do |m|
+    = m.label "Name"
+    = m.text_field :name
+    = m.label "Description"
+    = m.text_field :description
+    %div.actions
+      = m.submit

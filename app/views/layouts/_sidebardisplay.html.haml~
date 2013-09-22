@@ -34,16 +34,4 @@
   - if attribute_there?(@current_member.credits)
     = m.label "Credits"
     %br
-  - if address_there?(@current_member)
-    %br
-    Address:
-    = @current_member.address
-    %br
-    Latitude:
-    = @current_member.latitude
-    %br
-    Longitude:
-    = @current_member.longitude
-    %br
-
   = link_to 'Edit Profile', edit_member_path(@current_member)

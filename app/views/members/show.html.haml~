@@ -22,7 +22,11 @@
     %tr
       %td= @member.username
       %td= @member.email
-      %td= @member.theme
+      %td= @member.mytheme
+  - if ingroups?(@member)
+    Groups:
+    - @member.groupings do |grouping|
+      = grouping.id
   %div.form-inline
     %br
     %div.betterheading

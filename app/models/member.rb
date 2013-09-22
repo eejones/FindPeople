@@ -44,11 +44,43 @@ FILTERS = [
 
   after_validation :geocode
   has_many :resumevids, :dependent => :destroy
+  has_many :groupings, :dependent => :destroy
+  has_many :groups, :through => :groupings
+  attr_writer :group_names
+  after_save :assign_groups
+
+  def ingroup?(group)
+    groupings.find_by_group_id(group)
+  end
+   
+  def group_names
+    @group_names || groups.map(&:name).join(' ')
+  end
+
+  def join!(group)
+    self.groupings.create!(group_id => group.id)
+  end
+
+  def unjoin!(group)
+    self.groupings.find_by_group_id(group.id).destroy!
+  end
 
   private
 
     def create_remember_token
       self.remember_token = SecureRandom.urlsafe_base64
     end
+
+  def assign_groups
+    if @group_names
+      self.groups = @group_names.split(/\,/).map do |name|
+        if name[0..0]==" "
+          name=name.strip
+        end
+        name=name.downcase
+        Group.find_or_create_by_name(name)
+      end
+    end
+  end
 
 end

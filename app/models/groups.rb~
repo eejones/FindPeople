@@ -1,0 +1,7 @@
+class Groups < ActiveRecord::Base
+  has_many :groupings, :dependent => :destroy  
+  has_many :members, :through => :groupings
+  attr_accessible :description, :name
+  validates :name, presence:   true,
+                   uniqueness: { case_sensitive: false }
+end
