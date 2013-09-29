@@ -1,7 +1,17 @@
 - provide(:title, @group.name)
 %div{:class=>"row"}
   %section
-    = @group.name
-    |
-    = @group.description
-    = link_to 'Edit group', edit_group_path(@group)
+    %h1
+      = @group.name
+    %h2  
+      = @group.description
+      |
+      = link_to 'Edit group', edit_group_path(@group)
+  %div
+    - if @group.members.exists?
+      %br
+      %h3 Members
+      - @group.members.each do |m|
+        %ul= render :partial => @group.members
+
+

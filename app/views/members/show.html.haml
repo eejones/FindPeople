@@ -25,10 +25,9 @@
       %td= @member.mytheme
   - if ingroups?(@member)
     Groups:
-    = @member.groups
     = @member.groupings
-    - @member.groupings.each do |grouping|
-      = group.id
+    - @member.groups.each do |group|
+      = group.name
   %div.form-inline
     %br
     %div.betterheading

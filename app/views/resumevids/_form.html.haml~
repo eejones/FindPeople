@@ -1,4 +1,4 @@
-%div%newcreated
+%div#newcreated
   = form_for([@member, @member.resumevids.build],:remote=>true) do |f|
     %div.field
       = f.label :name

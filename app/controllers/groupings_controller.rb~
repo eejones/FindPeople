@@ -1,15 +1,32 @@
 class GroupingsController < ApplicationController
-#  before_action :signed_in_member
+#  before_action :signed_in?
+
+  def new
+    Grouping.new
+  end
 
   def create
-    @group = Group.find(params[:grouping][:group_id])
-    current_member.join!(@group)
-    redirect_to @current_member
+    @group = Group.find_by_id(params[:grouping][:group_id])
+    @member = current_member
+#    @grouping = @member.groupings.create(:member_id => "")
+    @grouping = @group.groupings.create(:group_id => @group.id)
+    if @grouping.save
+      flash[:notice] = "You have joined this group."
+      redirect_to :back
+    else
+      flash[:error] = "Unable to join."
+      redirect_to :back
+    end
+#    @grouping=Grouping.new
+#    @group = Group.find(params[:grouping][:group_id])
+#    @member= Member.find(params[:grouping][:member_id])
+#    @group.join!(@member)
+#    redirect_to @current_member
   end
 
   def destroy
-    @member = Grouping.find(params[:id]).member_id
-    current_member.unjoin!(@group)
+    @group = Grouping.find(params[:id]).member_id
+    @current_member.unjoin!(@group)
     redirect_to @current_member
   end
 end

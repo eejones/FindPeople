@@ -6,13 +6,6 @@
   Group ID
   = group.id
   |
-  |
-  group.class
-  = group.class
-  |
-  group.members.class
-  = group.members.class
-  |
   group.groupings.class
   = group.groupings.class
   |
@@ -22,8 +15,10 @@
   = link_to 'Edit group', edit_group_path(group)
   = link_to 'Remove group Record', group, :method => :delete, :data => { :confirm => 'Are you sure?' }
   - if group.memberingroup?(@current_member)
-    = link_to 'Leave Group', [group.groupings.find_by_member_id(@current_member)], :confirm => 'Are you sure that you want to Leave?', :method=> :destroy, :class=>"delete",:remote => true
+    %br
+    = link_to 'Leave Group', [group.groupings.find_by_member_id(@current_member)], :confirm => 'Are you sure that you want to Leave?', :method=> :destroy, :class=>"delete",:remote => true, class: "btn btn-large btn-primary"
   - else
-    = form_for(group.groupings.build(:member_id => current_member)) do |m|
+    = form_for(group.groupings.build(:member_id => current_member.id, :group_id=> group.id)) do |m|
       = m.hidden_field :group_id
+      = m.hidden_field :member_id
       = m.submit "Join", class: "btn btn-large btn-primary"
