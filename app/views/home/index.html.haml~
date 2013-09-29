@@ -6,3 +6,4 @@
       "independent"
     movies...
   = link_to "Sign Up Now!", signup_path, :class=> "btn-custom btn-large btn-primary"
+  = Groupings.all.inspect

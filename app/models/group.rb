@@ -5,8 +5,8 @@ class Group < ActiveRecord::Base
   validates :name, presence:   true,
                    uniqueness: { case_sensitive: false }
 
-  def ingroup?(current_member)
-    groupings.find_by_member_id(current_member)
+  def memberingroup?(current_member)
+    self.members.exists?(current_member)
   end
 
   def group_names
