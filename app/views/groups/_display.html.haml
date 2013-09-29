@@ -1,0 +1,6 @@
+%li
+  = link_to group.name, group
+  = group.description
+  - if group.memberingroup?(@current_member)
+    %br
+    = link_to 'Leave Group', [group.groupings.find_by_member_id(@current_member)], :confirm => 'Are you sure that you want to Leave?', :method=> :destroy, :class=>"delete",:remote => true, class: "btn btn-large btn-primary"

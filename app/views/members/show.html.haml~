@@ -23,12 +23,12 @@
       %td= @member.username
       %td= @member.email
       %td= @member.mytheme
-  - if ingroups?(@member)
-    Groups:
-    = @member.groups
-    = @member.groupings
-    - @member.groups.each do |group|
-      = group.id
+  %h4
+    - if ingroups?(@member)
+      Groups:
+      %ul.awesome
+        - @member.groups.each do |group|
+          = render :partial=> 'groups/display'
   %div.form-inline
     %br
     %div.betterheading
