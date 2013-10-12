@@ -1,16 +1,9 @@
-%li
-  = link_to group.name, group
-  |
-  = group.description
-  |
-  Group ID
-  = group.id
-  |
-  = group.members.each do |m|
-    = m.username
-  |
-  = link_to 'Edit group', edit_group_path(group)
-  = link_to 'Remove group Record', group, :method => :delete, :data => { :confirm => 'Are you sure?' }
+%li.grouplist
+  %h1
+    = link_to group.name, group
+    [#{group.id}]
+  %h3
+    = group.description
   - if group.memberingroup?(@current_member)
     %br
     = link_to 'Leave Group', [group.groupings.find_by_member_id(@current_member)], :confirm => 'Are you sure that you want to Leave?', :method=> :destroy, :class=>"delete",:remote => true, class: "btn btn-large btn-primary"
@@ -19,3 +12,5 @@
       = m.hidden_field :group_id
       = m.hidden_field :member_id
       = m.submit "Join", class: "btn btn-large btn-primary"
+  = link_to 'Edit group', edit_group_path(group)
+  = link_to 'Remove group Record', group, :method => :delete, :data => { :confirm => 'Are you sure?' }

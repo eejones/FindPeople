@@ -721,6 +721,42 @@ p {
   text-align: center;
   margin: 0 auto;
 }
+/* groups */
+.grouplist{
+  div{
+    a{
+      color: $graydark;
+    }
+    h1{
+      text-align: left;
+      font-weight: bold;
+      padding: 3px 3px 3px 3px;
+      font-size: 22px;
+      margin: 0px;
+      margin-bottom: 0px;
+      color: $graydark;
+      letter-spacing: 0px;
+    }
+    h1 img{
+      padding: 5px 5px 5px 0px;
+      margin: -7px;
+      margin-left: 5px;
+      margin-bottom: 7px;
+      margin-right: 2px;
+      float: left;
+    }
+    h3{
+      text-align: left;
+      font-weight: bold;
+      padding: 5px 5px 5px 0px;
+      font-size: 16px;
+      margin: 0px;
+      margin-bottom: 0px;
+      color: $graydark;
+      white-space: nowrap;
+    }
+  }
+}
 /* footer */
 
 footer {

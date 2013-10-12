@@ -26,9 +26,9 @@
   %h4
     - if ingroups?(@member)
       Groups:
-      %ul.awesome
+      %ul
         - @member.groups.each do |group|
-          = render :partial=> 'groups/display'
+          = render :partial=> 'groups/group', :collection=>@member.groups, :class=>grouplist
   %div.form-inline
     %br
     %div.betterheading

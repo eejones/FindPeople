@@ -5,16 +5,14 @@
   |
   Group ID
   = group.id
-  |
-  group.groupings.class
-  = group.groupings.class
-  |
-  current member
-  = current_member.username
+  %ul
+    = group.members.each do |member|
+      %li= render :partial=> 'members/member', :collection=> group.members
   |
   = link_to 'Edit group', edit_group_path(group)
   = link_to 'Remove group Record', group, :method => :delete, :data => { :confirm => 'Are you sure?' }
   - if group.memberingroup?(@current_member)
+    %br
     = link_to 'Leave Group', [group.groupings.find_by_member_id(@current_member)], :confirm => 'Are you sure that you want to Leave?', :method=> :destroy, :class=>"delete",:remote => true, class: "btn btn-large btn-primary"
   - else
     = form_for(group.groupings.build(:member_id => current_member.id, :group_id=> group.id)) do |m|
