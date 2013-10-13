@@ -11,7 +11,6 @@
     - if @group.members.exists?
       %br
       %h3 Members
-      - @group.members.each do |m|
-        %ul= render :partial => @group.members
+      %ul= render :partial => @group.members
 
 

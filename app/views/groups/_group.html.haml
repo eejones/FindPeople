@@ -6,7 +6,7 @@
   Group ID
   = group.id
   |
-  = group.members.collect{|m| m.username}
+  = group.members.collect{|m| m.username}.join(",")
   |
   = link_to 'Edit group', edit_group_path(group)
   = link_to 'Remove group Record', group, :method => :delete, :data => { :confirm => 'Are you sure?' }
