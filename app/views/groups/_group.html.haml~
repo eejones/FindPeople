@@ -5,9 +5,8 @@
   |
   Group ID
   = group.id
-  %ul
-    = group.members.each do |member|
-      %li= render :partial=> 'members/member', :collection=> group.members
+  |
+  = group.members.each{|m| print m.username}
   |
   = link_to 'Edit group', edit_group_path(group)
   = link_to 'Remove group Record', group, :method => :delete, :data => { :confirm => 'Are you sure?' }
