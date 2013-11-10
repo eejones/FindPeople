@@ -26,9 +26,8 @@
   %h4
     - if ingroups?(@member)
       Groups:
-      = @member.groups
       %ul
-        .grouplist
+        %div#groupstatus.grouplist
           = render :partial=> 'groups/group', :collection=>@member.groups
   %div.form-inline
     %br

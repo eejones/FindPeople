@@ -10,15 +10,14 @@
   |
   = link_to 'Edit group', edit_group_path(group)
   = link_to 'Remove group Record', group, :method => :delete, :data => { :confirm => 'Are you sure?' }
-  - if group.memberingroup?(current_member)
-    = group.groupings.find_by_member_id(current_member).id
-    %br
-    = render :partial => 'groups/unjoin', :locals => {:group => group, :member => current_member}
-  - else
-    = form_for(group.groupings.build(:member_id => current_member.id, :group_id=> group.id)) do |m|
-      = m.hidden_field :group_id
-      = m.hidden_field :member_id
-      = m.submit "Join", class: "btn btn-large btn-primary"
-  Current member:
-  = @current_member.id
-  = group.memberingroup?(@current_member)
+  %br
+  %div#groupdiv
+    - if group.memberingroup?(current_member)
+      = group.groupings.find_by_member_id(current_member).id
+      %br
+      = link_to "Exit Group", current_member.groupings.find_by_group_id(group.id), :method => :delete, :data => {:confirm=> "Are you sure?"}, :locals => {:group => group, :member => current_member}, :class => "btn btn-large btn-primary", :remote =>true
+    - else
+      = form_for(group.groupings.build(:member_id => current_member.id, :group_id=> group.id)) do |m|
+        = m.hidden_field :group_id
+        = m.hidden_field :member_id
+        = m.submit "Join", class: "btn btn-large btn-primary"

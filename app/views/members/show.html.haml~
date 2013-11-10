@@ -28,10 +28,8 @@
       Groups:
       = @member.groups
       %ul
-        - @member.groups.each do |group|
-          Hello World
-          .grouplist
-            = render :partial=> 'groups/group', :collection=>@member.groups
+        %div#groupstatus.grouplist
+          = render :partial=> 'groups/group', :collection=>@member.groups
   %div.form-inline
     %br
     %div.betterheading

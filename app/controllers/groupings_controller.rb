@@ -22,10 +22,11 @@ class GroupingsController < ApplicationController
     @member = Member.find_by_id(current_member)
     @grouping = Grouping.find(params[:id])
     @grouping.destroy
-#    @member=current_member
-#    @grouping = Grouping.find_by_id(params[:id])
-#    @grouping = @member.groupings.find(params[:id])
     flash[:notice] = "You have unjoined this group. ID: #{:id} current member: #{current_member} #{@current_member}"
-    redirect_to current_member
+#    redirect_to current_member
+    respond_to do |format|
+      format.html { redirect_to groups_url }
+      format.js
+    end
   end
 end

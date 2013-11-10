@@ -1,0 +1,3 @@
+/* Remove the group from member */
+$('#edit_group_#{group.id}').remove();
+
