@@ -10,8 +10,12 @@ class GroupingsController < ApplicationController
     @member = current_member
     @grouping = @group.groupings.create(:member_id => @member.id)
     if @grouping.save
-      flash[:notice] = "You have joined this group."
-      redirect_to :back
+      respond_to do |format|
+        format.html { redirect_to groups_url }
+        format.js
+      end
+#      flash[:notice] = "You have joined this group."
+#      redirect_to :back
     else
       flash[:error] = "Unable to join."
       redirect_to :back
@@ -22,8 +26,6 @@ class GroupingsController < ApplicationController
     @member = Member.find_by_id(current_member)
     @grouping = Grouping.find(params[:id])
     @grouping.destroy
-    flash[:notice] = "You have unjoined this group. ID: #{:id} current member: #{current_member} #{@current_member}"
-#    redirect_to current_member
     respond_to do |format|
       format.html { redirect_to groups_url }
       format.js

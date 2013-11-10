@@ -1,0 +1,6 @@
+/* Remove the join button */
+$("#groupdiv").hide()
+/* add leave group button */
+$("#groupdiv").html("#{escape_javascript(render(:partial=>'groupings/destroy'))}")
+
+
