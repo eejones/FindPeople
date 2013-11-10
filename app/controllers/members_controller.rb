@@ -92,8 +92,6 @@ class MembersController < ApplicationController
 
 private
 
-
-
     def signed_in_member
       unless signed_in?
         store_location

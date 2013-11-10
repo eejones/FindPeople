@@ -87,15 +87,6 @@ class MembersController < ApplicationController
     end
   end
 
-  def myfilters
-     @member = Member.where((params[:myfilters]-params[FILTERS]).empty?)
-#    @member = Member.where(params[:myfilters])
-#params[:myfilters]-(@filters.collect{|f| f[:scope]}))
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @member }
-    end
-  end
 
 
 

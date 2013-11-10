@@ -17,6 +17,7 @@ FindPeople::Application.routes.draw do
   match '/about',   :to=> 'home#about'
   match '/contact', :to=> 'home#contact'
   match '/newgroup', :to=> 'groups#new'
+  match '/groups' , :to=> 'groups#index'
 
   get "home/index"
 

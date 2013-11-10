@@ -6,15 +6,19 @@
   Group ID
   = group.id
   |
-  = group.members.collect{|m| m.username}.join(",")
+  = group.members.collect{|m| m.id}.join(",")
   |
   = link_to 'Edit group', edit_group_path(group)
   = link_to 'Remove group Record', group, :method => :delete, :data => { :confirm => 'Are you sure?' }
-  - if group.memberingroup?(@current_member)
+  - if group.memberingroup?(current_member)
+    = group.groupings.find_by_member_id(current_member).id
     %br
-    = link_to 'Leave Group', [group.groupings.find_by_member_id(@current_member)], :confirm => 'Are you sure that you want to Leave?', :method=> :destroy, :class=>"delete",:remote => true, class: "btn btn-large btn-primary"
+    = render :partial => 'groups/unjoin', :locals => {:group => group, :member => current_member}
   - else
     = form_for(group.groupings.build(:member_id => current_member.id, :group_id=> group.id)) do |m|
       = m.hidden_field :group_id
       = m.hidden_field :member_id
       = m.submit "Join", class: "btn btn-large btn-primary"
+  Current member:
+  = @current_member.id
+  = group.memberingroup?(@current_member)
