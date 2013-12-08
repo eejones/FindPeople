@@ -1,8 +1,9 @@
 - provide(:title, 'All Groups')
-%h1 Listing Groups
+%h1 Groups
 %br/
 %ul.groups
   = render @groups
 %br/
-= link_to 'Add a New group', new_group_path
+%h2
+  = link_to 'Add a New group', new_group_path
 = debug(params) if Rails.env.development?

@@ -1,8 +1,15 @@
 %div.awesome
-  = form_for (@groups) do |m|
+  current_member
+  = current_member
+  @current_member
+  = @current_member
+  @member
+  = @member
+  = form_for(@group) do |m|
     = m.label "Name"
     = m.text_field :name
     = m.label "Description"
     = m.text_field :description
-    %div.actions
-      = m.submit
+    = m.hidden_field :group_id
+    = m.hidden_field :member_id
+    = m.submit(:locals =>{:member_id => @current_member.id})
