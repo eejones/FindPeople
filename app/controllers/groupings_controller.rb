@@ -11,7 +11,7 @@ class GroupingsController < ApplicationController
     @grouping = @group.groupings.create(:member_id => @member.id)
     if @grouping.save
       respond_to do |format|
-        format.html { redirect_to groups_url }
+        format.html { redirect_to groups_path }
         format.js
       end
 #      flash[:notice] = "You have joined this group."
@@ -25,6 +25,7 @@ class GroupingsController < ApplicationController
   def destroy
     @member = Member.find_by_id(current_member)
     @grouping = Grouping.find(params[:id])
+    @group = Group.find(@grouping.group_id)
     @grouping.destroy
     respond_to do |format|
       format.html { redirect_to groups_url }

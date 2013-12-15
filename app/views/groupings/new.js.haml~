@@ -1,6 +1,7 @@
 /* Remove the join button */
-$("#joindiv").hide()
-/* add leave group button */
-$("#newcreated").html("#{escape_javascript(render(:partial=>'groupings/destroy'))}")
-
+/*$("#group").hide() */
+/* Reload the group they joined */
+$("#group_#{@group.id}").html("#{escape_javascript(render(:partial=>'group'))}");
+/* add something to show they joined the group */
+$('#groupdiv').after("You have left this group")
 

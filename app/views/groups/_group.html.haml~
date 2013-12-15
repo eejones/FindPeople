@@ -17,8 +17,7 @@
       %br
       = link_to "Exit Group", current_member.groupings.find_by_group_id(group.id), :method => :delete, :data => {:confirm=> "Are you sure?"}, :locals => {:group => group, :member => current_member}, :class => "btn btn-large btn-primary", :remote =>true
     - else
-      = group.groupings.build(:member_id => current_member.id, :group_id=> group.id) do |m|
+      = form_for(group.groupings.build(:member_id => current_member.id, :group_id=> group.id), :remote=>true) do |m|
         = m.hidden_field :group_id
         = m.hidden_field :member_id
-        = link_to "Join Group", group.groupings.build(:member_id => current_member.id, :group_id=> group.id), class: "btn btn-large btn-primary", :remote=>true
         = m.submit "Join", class: "btn btn-large btn-primary"

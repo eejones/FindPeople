@@ -1,2 +1,2 @@
 /* Remove the group from member */
-$('#groupdiv').hide().after("#{j %br}You have left this group");
+$('#groupdiv').hide().after("You have left this group");

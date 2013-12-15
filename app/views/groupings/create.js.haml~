@@ -1,0 +1,4 @@
+/* Remove the join button */
+/*$("#group").hide() */
+/* add leave group button */
+$("#group_#{@group.id}").html("#{escape_javascript(render(:partial=>'@group'))}")
