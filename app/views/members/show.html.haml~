@@ -6,7 +6,7 @@
       %section
         %div.betterheading
           %h1
-            %img{:src=>@member.avatar.url(:thumb), :width=>"32",:height=>"32"}
+            = image_tag @member.avatar.url(:medium)
             = @member.username
   %p{:id=>"notice"}
     = notice
@@ -26,7 +26,6 @@
   %h4
     - if ingroups?(@member)
       Groups:
-      = @member.groups
       %ul
         %div#groupstatus.grouplist
           = render :partial=> 'groups/group', :collection=>@member.groups

@@ -1,0 +1,25 @@
+= div_for membergroup do
+  =params[:action]
+  %li
+    = link_to membergroup.name, membergroup
+    |
+    = membergroup.description
+    |
+    membergroup ID
+    = membergroup.id
+    |
+    = membergroup.members.collect{|m| m.id}.join(",")
+    |
+    = link_to 'Edit membergroup', edit_group_path(membergroup)
+    = link_to 'Remove group Record', membergroup, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    %br
+    %div#membergroupdiv
+      - if membergroup.memberingroup?(current_member)
+        = membergroup.groupings.find_by_member_id(current_member).id
+        %br
+        = link_to "Exit MemberGroup", current_member.groupings.find_by_group_id(membergroup.id), :method => :delete, :data => {:confirm=> "Are you sure?"}, :locals => {:membergroup => membergroup, :member => current_member}, :class => "btn btn-large btn-primary", :remote =>true
+      - else
+        = form_for(membergroup.groupings.build(:member_id => current_member.id, :group_id=> membergroup.id), :remote=>true) do |m|
+          = m.hidden_field :group_id
+          = m.hidden_field :member_id
+          = m.submit "Join Membergroup", class: "btn btn-large btn-primary"  

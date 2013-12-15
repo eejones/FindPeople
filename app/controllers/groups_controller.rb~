@@ -1,7 +1,7 @@
 class GroupsController < ApplicationController
-#  include SessionsHelper
+  include SessionsHelper
 
-#  before_filter :current_member
+  before_filter :current_member
   # GET /groups
   # GET /groups.json
   def index

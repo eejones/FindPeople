@@ -1,3 +1,4 @@
-/* Remove the group from member */
-/*$('#groupdiv').hide().after("You have left this group");*/
+/* Remove the group from member in member profile */
+/*$("#membergroup_#{@group.id}").hide().after("You have left this group");*/
+/*remove grouping and reload group */
 $("#group_#{@group.id}").html("#{escape_javascript(render(:partial=>@group))}")
