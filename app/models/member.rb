@@ -53,6 +53,15 @@ FILTERS = [
     groupings.find_by_group_id(group)
   end
    
+
+  def self.current=(m)
+    @current_member = m
+  end
+
+  def self.current
+    @current_member
+  end
+
   def group_names
     @group_names || groups.map(&:name).join(' ')
   end

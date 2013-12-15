@@ -1,10 +1,11 @@
 module ApplicationHelper
+helper_method :current_user
 
   def select_tag_for_filter(member, nvpairs, params)
     options = { :query => params[:query] }
     _url = url_for(eval("#{member}_url(options)"))
     _html = %{%label(for='show') Show:}
-    _html << %{%select name="show" id="show"}
+    _html << %{%select :name=>"show" :id=>"show"}
     _html << %{onchange="window.location='#{_url}' + '?show=' + this.value">}
     nvpairs.each do |pair|
       _html << %{%option(value='#{pair[:scope]}')}
@@ -24,5 +25,10 @@ module ApplicationHelper
      render :partial => 'shared/video'
    end
  end 
+
+private
+def current_user
+  @current_user ||= User.find(session[:user_id]) if session[:user_id]
+end
 
 end

@@ -1,5 +1,7 @@
 class GroupsController < ApplicationController
+  include SessionsHelper
 
+  before_filter :current_member
   # GET /groups
   # GET /groups.json
   def index
@@ -34,11 +36,13 @@ class GroupsController < ApplicationController
   # POST /groups
   # POST /groups.json
   def create
-    #@member= @current_member
+    #@current= params[:group][:mymember]
     @group = Group.new(params[:group])
+    @member=Member.find(params[:current_member]["id"])
     respond_to do |format|
       if @group.save
-        #@group.join!(@current_member)
+        @group.join!(@member)
+        #group.groupings.build(:member_id => @member.id, :group_id=> @group.id
         format.html { redirect_to @group, notice: 'group was successfully created.' }
         format.json { render json: @group, status: :created, location: @group }
       else

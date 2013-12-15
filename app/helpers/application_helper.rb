@@ -25,4 +25,9 @@ module ApplicationHelper
    end
  end 
 
+private
+def current_member
+  @current_member ||= User.find(session[:member_id]) if session[:member_id]
+end
+
 end

@@ -1,12 +1,14 @@
 class Group < ActiveRecord::Base
   has_many :groupings, :dependent => :destroy  
   has_many :members, :through => :groupings
-  attr_accessible :description, :name
+  accepts_nested_attributes_for :members
+  attr_accessible :members_attributes, :sessions_attributes, :mymember, :description, :name
   validates :name, presence:   true,
                    uniqueness: { case_sensitive: false }
 
+
   def memberingroup?(current_member)
-    self.members(:member_id => current_member)
+    self.members.exists?(current_member)
   end
 
   def group_names

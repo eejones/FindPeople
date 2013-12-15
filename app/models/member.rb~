@@ -58,11 +58,11 @@ FILTERS = [
   end
 
   def join!(group)
-    groupings.create!(group_id => group.id)
+    self.groupings.create!(group_id => group.id)
   end
 
   def unjoin!(group)
-    groupings.find_by_group_id(group.id).destroy!
+    self.groupings.find_by_group_id(group.id).destroy!
   end
 
   private
