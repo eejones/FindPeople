@@ -21,4 +21,4 @@
         = form_for(group.groupings.build(:member_id => current_member.id, :group_id=> group.id), :remote=>true) do |m|
           = m.hidden_field :group_id
           = m.hidden_field :member_id
-          = m.submit "Join", class: "btn btn-large btn-primary"  
+          = m.submit "Join", class: "btn btn-large btn-primary"
