@@ -2,7 +2,6 @@
 %html
   %head
     %title FindPeople
-
     - if signed_in?
       - if has_theme?(@current_member)
         - if @current_member.mytheme=='Classic'

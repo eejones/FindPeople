@@ -1,4 +1,5 @@
 @import "bootstrap";
+//= require jquery
 
 /* mixins, variables, etc. */
 
@@ -740,7 +741,6 @@ footer {
   float: left;
   background-color: $headblack;
   a {
-    color: $black;
     &:hover { 
     color: $white;
     background-color: transparent;

@@ -554,6 +554,7 @@ input {
     padding-bottom:20px;
     a{
       display: block;
+      text-align: center;
       color: $black;
       &:hover{
         color: $black;
@@ -741,7 +742,6 @@ footer {
   float: left;
   background-color: $headblack;
   a {
-    color: $black;
     &:hover { 
     color: $white;
     background-color: transparent;
