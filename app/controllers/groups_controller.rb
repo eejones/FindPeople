@@ -38,7 +38,8 @@ class GroupsController < ApplicationController
   def create
     #@current= params[:group][:mymember]
     @group = Group.new(params[:group])
-    @member=Member.find(params[:current_member]["id"])
+    @member=Member.find(@current_member.id)
+    #@member=Member.find(params[:current_member]["id"])
     respond_to do |format|
       if @group.save
         @group.join!(@member)

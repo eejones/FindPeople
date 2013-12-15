@@ -9,6 +9,6 @@
     = m.label "Name"
     = m.text_field :name
     = m.label "Description"
-    = hidden_field(:mymember, @current_member.id)
+    = hidden_field(:current_member, :id)
     = m.text_field :description
     = m.submit
